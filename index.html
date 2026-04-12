@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpatialCorp — Unique Audio Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent-blue: #00c8ff; --accent-purple: #9b5de5; --accent-cyan: #0ff;
+      --bg-dark: #04040a; --bg-card: rgba(255,255,255,0.04);
+      --border-glow: rgba(0,200,255,0.35); --text-primary: #f0f0f8;
+      --text-muted: rgba(240,240,248,0.55); --font: 'Space Grotesk', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); background-color: var(--bg-dark); color: var(--text-primary); min-height: 100vh; overflow-x: hidden; }
+    .hero {
+      position: relative; min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center; padding: 2rem 1.5rem;
+      background: linear-gradient(135deg, #04040a 0%, #0a0520 30%, #0b0a2e 55%, #10052a 75%, #04040a 100%);
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(4,4,10,0.55) 0%, rgba(4,4,10,0.70) 60%, rgba(4,4,10,0.90) 100%);
+      z-index: 0;
+    }
+    .hero::after {
+      content: ''; position: absolute; width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,200,255,0.08) 0%, rgba(155,93,229,0.06) 50%, transparent 70%);
+      top: 50%; left: 50%; transform: translate(-50%, -50%);
+      animation: pulse-glow 6s ease-in-out infinite; z-index: 0;
+    }
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.12); }
+    }
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: center; padding: 1.4rem 2rem;
+      background: linear-gradient(180deg, rgba(4,4,10,0.85) 0%, transparent 100%);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    }
+    .brand-link { display: flex; align-items: center; text-decoration: none; }
+    .brand-logo {
+      height: clamp(40px, 6vw, 65px); width: auto;
+      filter: drop-shadow(0 0 12px rgba(0,200,255,0.3)); transition: filter 0.3s ease;
+    }
+    .brand-logo:hover { filter: drop-shadow(0 0 20px rgba(0,200,255,0.5)); }
+    .hero-content { position: relative; z-index: 1; max-width: 860px; margin-top: 4rem; }
+    .eyebrow {
+      display: inline-block; font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.35em; text-transform: uppercase; color: var(--accent-blue);
+      margin-bottom: 1.4rem; opacity: 0; animation: fade-up 0.9s ease 0.2s forwards;
+    }
+    .hero-headline {
+      font-size: clamp(2.4rem, 6.5vw, 5.2rem); font-weight: 700; line-height: 1.12;
+      letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 1.4rem;
+      opacity: 0; animation: fade-up 0.9s ease 0.45s forwards;
+    }
+    .hero-headline span {
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2.2vw, 1.25rem); font-weight: 300; color: var(--text-muted);
+      line-height: 1.65; max-width: 600px; margin: 0 auto 2.8rem;
+      opacity: 0; animation: fade-up 0.9s ease 0.7s forwards;
+    }
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .btn-demo {
+      display: inline-block; padding: 1rem 2.8rem; font-family: var(--font);
+      font-size: 1rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+      color: #fff; background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+      border: none; border-radius: 4px; cursor: pointer; position: relative; overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 0 18px rgba(0,200,255,0.45), 0 0 40px rgba(0,200,255,0.18);
+      opacity: 0; animation: fade-up 0.9s ease 0.95s forwards;
+    }
+    .btn-demo::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), transparent);
+      opacity: 0; transition: opacity 0.2s ease;
+    }
+    .btn-demo:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 28px rgba(0,200,255,0.65), 0 0 60px rgba(0,200,255,0.28);
+    }
+    .btn-demo:hover::after { opacity: 1; }
+    .btn-demo:active { transform: translateY(0) scale(0.98); }
+    .footer {
+      position: relative; z-index: 1; padding: 2rem 1.5rem; text-align: center;
+      font-size: 0.8rem; color: var(--text-muted); background: rgba(4,4,10,0.92);
+      border-top: 1px solid rgba(255,255,255,0.06); letter-spacing: 0.06em;
+    }
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      align-items: center; justify-content: center; padding: 1rem;
+      background: rgba(4,4,10,0.82); backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px); animation: overlay-in 0.25s ease;
+    }
+    .modal-overlay.open { display: flex; }
+    @keyframes overlay-in { from { opacity: 0; } to { opacity: 1; } }
+    .modal {
+      position: relative; width: 100%; max-width: 480px; background: #0d0d1f;
+      border: 1px solid var(--border-glow); border-radius: 12px; padding: 2.5rem 2rem;
+      box-shadow: 0 0 0 1px rgba(0,200,255,0.12), 0 24px 80px rgba(0,0,0,0.7);
+      animation: modal-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    @keyframes modal-in {
+      from { opacity: 0; transform: scale(0.88) translateY(24px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .modal-close {
+      position: absolute; top: 1rem; right: 1.1rem; background: none; border: none;
+      color: var(--text-muted); font-size: 1.5rem; line-height: 1; cursor: pointer;
+      transition: color 0.15s ease;
+    }
+    .modal-close:hover { color: var(--accent-blue); }
+    .modal-eyebrow {
+      font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--accent-blue); margin-bottom: 0.6rem;
+    }
+    .modal h2 { font-size: 1.55rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary); }
+    .modal-desc { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.8rem; line-height: 1.55; }
+    .form-group { margin-bottom: 1.15rem; }
+    .form-group label {
+      display: block; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.07em;
+      text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.45rem;
+    }
+    .form-group input {
+      width: 100%; padding: 0.8rem 1rem; background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; color: var(--text-primary);
+      font-family: var(--font); font-size: 0.95rem; outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .form-group input::placeholder { color: rgba(240,240,248,0.3); }
+    .form-group input:focus { border-color: var(--accent-blue); box-shadow: 0 0 0 3px rgba(0,200,255,0.12); }
+    .btn-submit {
+      width: 100%; padding: 0.9rem; margin-top: 0.6rem; font-family: var(--font);
+      font-size: 0.95rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+      color: #fff; background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+      border: none; border-radius: 6px; cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+      box-shadow: 0 0 18px rgba(0,200,255,0.35);
+    }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 0 28px rgba(0,200,255,0.55); }
+    .btn-submit:active { transform: translateY(0); }
+    .thank-you { display: none; text-align: center; padding: 1rem 0; animation: fade-up 0.5s ease forwards; }
+    .thank-you .ty-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .thank-you h3 { font-size: 1.35rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem; }
+    .thank-you p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+    @media (max-width: 600px) {
+      .modal { padding: 2rem 1.3rem; border-radius: 8px; }
+      .hero-content { margin-top: 5rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="#" class="brand-link">
+      <img src="logo.png" alt="SpatialCorp - Unique Audio Solutions" class="brand-logo" />
+    </a>
+  </nav>
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">SpatialCorp · Unique Audio Solutions</p>
+      <h1 class="hero-headline">We are setting the <span>future.</span></h1>
+      <p class="hero-sub">Get in touch with the revolutionary performance experience</p>
+      <button class="btn-demo" onclick="openModal()">Book a Demo</button>
+    </div>
+  </section>
+  <footer class="footer">© 2026 SpatialCorp. All rights reserved.</footer>
+  <div class="modal-overlay" id="demoModal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <div id="formView">
+        <p class="modal-eyebrow">SpatialCorp · Demo Request</p>
+        <h2 id="modal-title">Book a Demo</h2>
+        <p class="modal-desc">Tell us about yourself and we'll get in touch to arrange your personalised SpatialCorp demo.</p>
+        <form id="demoForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Your full name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="company">Club / Rental Company Name</label>
+            <input type="text" id="company" name="company" placeholder="Your club or company" required autocomplete="organization" />
+          </div>
+          <button type="submit" class="btn-submit">Send Request</button>
+        </form>
+      </div>
+      <div class="thank-you" id="thankYou">
+        <div class="ty-icon">🎧</div>
+        <h3>Request sent!</h3>
+        <p>Your email client has opened with a pre-filled message.<br />We'll get back to you shortly to arrange your SpatialCorp demo.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    function openModal() {
+      document.getElementById('demoModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('formView').style.display = 'block';
+      document.getElementById('thankYou').style.display = 'none';
+      document.getElementById('demoForm').reset();
+    }
+    function closeModal() {
+      document.getElementById('demoModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('demoModal').addEventListener('click', function (e) {
+      if (e.target === this) closeModal();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+    function handleSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const company = document.getElementById('company').value.trim();
+      const subject = encodeURIComponent('Demo Request - SpatialCorp');
+      const body = encodeURIComponent(
+        'Hi,\n\nI would like to book a demo for SpatialCorp.\n\n' +
+        'Full Name: ' + name + '\n' +
+        'Email: ' + email + '\n' +
+        'Club / Company: ' + company + '\n\n' +
+        'Looking forward to hearing from you!\n\n' + name
+      );
+      // <!-- CHANGE EMAIL ADDRESS HERE -->
+      // Replace with info@spatialaudioclub.com once Zoho Mail is configured
+      const recipient = 'michele.azzimonti@gmail.com';
+      window.location.href = 'mailto:' + recipient + '?subject=' + subject + '&body=' + body;
+      document.getElementById('formView').style.display = 'none';
+      document.getElementById('thankYou').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
