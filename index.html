@@ -1,485 +1,551 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SpatialCorp — Audio Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spatial Corps – Audio solutions empowering people</title>
+  <meta name="description" content="Spatial Corps delivers immersive spatial audio technology for clubs and DJs. Born in Ibiza, built for the world." />
+  <meta property="og:title" content="Spatial Corps – Audio solutions empowering people" />
+  <meta property="og:description" content="Immersive spatial audio technology for clubs and DJs. Book a demo today." />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --accent-blue: #00c8ff; 
-      --accent-purple: #9b5de5; 
-      --bg-dark: #04040a; 
-      --text-primary: #ffffff;
-      --text-muted: #e0e0e0;
-      --font: 'Space Grotesk', sans-serif;
+      --accent-blue:    #00c8ff;
+      --accent-purple:  #9b5de5;
+      --bg-dark:        #04040a;
+      --bg-alt:         rgba(255,255,255,0.02);
+      --text-primary:   #ffffff;
+      --text-muted:     #e0e0e0;
+      --font:           "Space Grotesk", sans-serif;
+      --header-h:       120px;
     }
-    html { scroll-behavior: smooth; }
-    body { 
-      font-family: var(--font); 
-      background-color: var(--bg-dark); 
-      color: var(--text-primary); 
-      overflow-x: hidden; 
-      line-height: 1.6;
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font);
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      line-height: 1.65;
     }
-    
-    /* Header & Navigation */
-    .header {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(4,4,10,0.98);
-      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-      padding: 1rem 2rem; border-bottom: 1px solid rgba(0,200,255,0.2);
+
+    /* === HEADER === */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(4,4,10,0.97);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,200,255,0.18);
     }
-    
-    .header-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-    
-    .logo-link { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
-    .logo { height: 50px; width: auto; filter: drop-shadow(0 0 8px rgba(0,200,255,0.4)); transition: filter 0.3s ease; }
-    .logo:hover { filter: drop-shadow(0 0 12px rgba(0,200,255,0.6)); }
-    
-    .nav-menu { display: flex; gap: 2rem; list-style: none; align-items: center; }
-    .nav-menu a {
-      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;
-      position: relative;
+    .header-top {
+      max-width: 1300px; margin: 0 auto; padding: 0 2rem;
+      height: 72px; display: flex; align-items: center;
+      justify-content: space-between; gap: 1.5rem;
     }
-    .nav-menu a:hover, .nav-menu a.active { color: var(--accent-blue); }
-    .nav-menu a::after {
-      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
-      background: var(--accent-blue); transition: width 0.3s ease;
+    .header-logo {
+      display: flex; align-items: center; text-decoration: none; flex-shrink: 0;
     }
-    .nav-menu a:hover::after, .nav-menu a.active::after { width: 100%; }
-    
-    /* Hero Section */
-    .hero {
-      position: relative; min-height: 100vh; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; text-align: center; padding: 8rem 1.5rem 2rem;
-      background: linear-gradient(135deg, #04040a 0%, #0a0520 30%, #0b0a2e 55%, #10052a 75%, #04040a 100%);
-      margin-top: 0;
+    .header-logo img {
+      height: 48px; width: auto;
+      filter: drop-shadow(0 0 8px rgba(0,200,255,0.4));
+      transition: filter 0.3s ease;
     }
-    .hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(4,4,10,0.55) 0%, rgba(4,4,10,0.70) 60%, rgba(4,4,10,0.90) 100%);
-      z-index: 0;
+    .header-logo img:hover { filter: drop-shadow(0 0 14px rgba(0,200,255,0.65)); }
+    .header-claim {
+      font-size: 0.88rem; font-weight: 400; color: var(--text-muted);
+      letter-spacing: 0.04em; flex: 1; text-align: center;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
-    .hero::after {
-      content: ''; position: absolute; width: 700px; height: 700px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,200,255,0.08) 0%, rgba(155,93,229,0.06) 50%, transparent 70%);
-      top: 50%; left: 50%; transform: translate(-50%, -50%);
-      animation: pulse-glow 6s ease-in-out infinite; z-index: 0;
-    }
-    @keyframes pulse-glow {
-      0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
-      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.12); }
-    }
-    
-    .hero-content { position: relative; z-index: 1; max-width: 860px; }
-    .eyebrow {
-      display: inline-block; font-size: 0.75rem; font-weight: 500;
-      letter-spacing: 0.35em; text-transform: uppercase; color: var(--accent-blue);
-      margin-bottom: 1.4rem;
-    }
-    .hero-headline {
-      font-size: clamp(2.4rem, 6.5vw, 5.2rem); font-weight: 700; line-height: 1.12;
-      letter-spacing: -0.02em; color: #ffffff; margin-bottom: 1.4rem;
-    }
-    .hero-headline span {
-      background: linear-gradient(90deg, var(--accent-blue), #00ffff);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .hero-sub {
-      font-size: clamp(1rem, 2.2vw, 1.25rem); font-weight: 300; color: #e0e0e0;
-      line-height: 1.65; max-width: 600px; margin: 0 auto 2.8rem;
-    }
-    
     .btn-demo {
-      display: inline-block; padding: 1rem 2.8rem; font-family: var(--font);
-      font-size: 1rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
-      color: #fff; background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
-      border: none; border-radius: 4px; cursor: pointer; position: relative; overflow: hidden;
+      display: inline-block; padding: 0.65rem 1.6rem;
+      font-family: var(--font); font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: #fff; text-decoration: none;
+      background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+      border: none; border-radius: 4px; cursor: pointer; flex-shrink: 0;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 0 18px rgba(0,200,255,0.45), 0 0 40px rgba(0,200,255,0.18);
-    }
-    .btn-demo::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.12), transparent);
-      opacity: 0; transition: opacity 0.2s ease;
+      box-shadow: 0 0 16px rgba(0,200,255,0.35), 0 0 36px rgba(0,200,255,0.12);
     }
     .btn-demo:hover {
-      transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 0 28px rgba(0,200,255,0.65), 0 0 60px rgba(0,200,255,0.28);
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 0 26px rgba(0,200,255,0.6), 0 0 56px rgba(0,200,255,0.24);
     }
-    .btn-demo:hover::after { opacity: 1; }
     .btn-demo:active { transform: translateY(0) scale(0.98); }
-    
-    /* Content Sections */
-    .section {
-      position: relative; padding: 6rem 2rem; max-width: 1200px; margin: 0 auto;
+
+    /* Nav */
+    nav.desktop-nav {
+      border-top: 1px solid rgba(255,255,255,0.05);
+      background: rgba(4,4,10,0.6);
     }
-    .section h2 {
-      font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; margin-bottom: 1rem;
-      letter-spacing: -0.01em; color: #ffffff;
+    .nav-inner {
+      max-width: 1300px; margin: 0 auto; padding: 0 2rem;
+      height: 48px; display: flex; align-items: center;
+      justify-content: center; gap: 2.5rem;
     }
-    .section h3 {
-      font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; margin-bottom: 0.8rem; margin-top: 2rem;
-      color: #ffffff;
+    .nav-inner a {
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-muted);
+      text-decoration: none; position: relative;
+      transition: color 0.25s ease; white-space: nowrap;
     }
-    .section p {
-      font-size: 1rem; line-height: 1.7; color: #e0e0e0; margin-bottom: 1.2rem;
+    .nav-inner a::after {
+      content: ""; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 2px; background: var(--accent-blue);
+      transition: width 0.3s ease;
     }
-    .section ul {
-      list-style: none; margin-left: 0; margin-bottom: 1.5rem;
+    .nav-inner a:hover, .nav-inner a.active { color: var(--accent-blue); }
+    .nav-inner a:hover::after, .nav-inner a.active::after { width: 100%; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      align-items: center; gap: 5px; background: none; border: none;
+      cursor: pointer; padding: 6px; flex-shrink: 0;
     }
-    .section li {
-      font-size: 1rem; line-height: 1.7; color: #e0e0e0; margin-bottom: 0.8rem;
-      padding-left: 1.8rem; position: relative;
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--text-muted); border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
     }
-    .section li::before {
-      content: '•'; position: absolute; left: 0; color: var(--accent-blue); font-weight: bold;
+    .hamburger[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg); background: var(--accent-blue);
     }
-    
-    .section:nth-child(odd) { background: rgba(0,200,255,0.02); }
-    
-    .section-about { scroll-margin-top: 80px; }
-    .section-tech { scroll-margin-top: 80px; }
-    .section-services { scroll-margin-top: 80px; }
-    
-    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 2rem 0; }
-    .feature-box {
-      padding: 2rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(0,200,255,0.15);
-      border-radius: 8px; transition: all 0.3s ease;
+    .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .hamburger[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg); background: var(--accent-blue);
     }
-    .feature-box:hover {
-      background: rgba(255,255,255,0.07); border-color: rgba(0,200,255,0.35);
-      transform: translateY(-4px);
+    .nav-mobile {
+      display: none; flex-direction: column;
+      background: rgba(4,4,10,0.98);
+      border-top: 1px solid rgba(0,200,255,0.12);
     }
-    .feature-box h4 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.8rem; color: var(--accent-blue); }
-    .thank-you p { font-size: 0.9rem; color: #d0d0d0; line-height: 1.6; }
-    
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      padding: 0.85rem 2rem; font-size: 0.85rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-muted); text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+    .nav-mobile a:hover { color: var(--accent-blue); background: rgba(0,200,255,0.04); }
+
+    /* === MAIN / SECTIONS === */
+    main { padding-top: var(--header-h); }
+    section { scroll-margin-top: 130px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; padding: 6rem 2rem; }
+
+    /* Alternating backgrounds */
+    #hero          { background: linear-gradient(160deg,#04040a 0%,#0a0520 30%,#0b0a2e 55%,#10052a 80%,#04040a 100%); }
+    #who-we-are    { background: var(--bg-alt); }
+    #our-technologies { background: var(--bg-dark); }
+    #ecosystem     { background: var(--bg-alt); }
+    #our-services  { background: var(--bg-dark); }
+
+    /* Typography */
+    .section-inner h2 {
+      font-size: clamp(2rem,5vw,3.2rem); font-weight: 700;
+      letter-spacing: -0.02em; color: #fff;
+      margin-bottom: 1.4rem; position: relative; padding-bottom: 0.8rem;
+    }
+    .section-inner h2::after {
+      content: ""; position: absolute; bottom: 0; left: 0;
+      width: 56px; height: 3px;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+      border-radius: 2px;
+    }
+    .section-inner h3 {
+      font-size: clamp(1.1rem,2.5vw,1.45rem); font-weight: 600;
+      color: var(--accent-blue); margin-top: 2.4rem; margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+    .section-inner p {
+      font-size: 1rem; line-height: 1.75; color: var(--text-muted); margin-bottom: 1.1rem;
+    }
+    .section-inner ul { list-style: none; margin-bottom: 1.3rem; }
+    .section-inner li {
+      font-size: 1rem; line-height: 1.7; color: var(--text-muted);
+      padding-left: 1.75rem; position: relative; margin-bottom: 0.6rem;
+    }
+    .section-inner li::before {
+      content: "b8"; position: absolute; left: 0;
+      color: var(--accent-blue); font-size: 0.85rem; top: 0.15em;
+    }
+    .section-inner strong { color: #fff; font-weight: 600; }
+
+    /* Pills */
+    .principles { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.4rem 0; }
+    .pill {
+      display: inline-flex; align-items: center; padding: 0.5rem 1.1rem;
+      background: rgba(0,200,255,0.06); border: 1px solid rgba(0,200,255,0.22);
+      border-radius: 100px; font-size: 0.88rem; font-weight: 500; color: var(--text-muted);
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .pill:hover { background: rgba(0,200,255,0.12); border-color: rgba(0,200,255,0.45); }
+    .pill strong { color: var(--accent-blue); margin-right: 0.3em; }
+
+    /* Audience split */
+    .audience-split {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0;
+    }
+    .audience-block {
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(155,93,229,0.18); border-radius: 10px;
+    }
+    .audience-block h4 {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--accent-purple); margin-bottom: 0.9rem;
+    }
+
+    /* Hero */
+    #hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; overflow: hidden;
+    }
+    .hero-glow {
+      position: absolute; width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle,rgba(0,200,255,0.09) 0%,rgba(155,93,229,0.07) 45%,transparent 70%);
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      animation: pulse-glow 7s ease-in-out infinite; pointer-events: none;
+    }
+    @keyframes pulse-glow {
+      0%,100% { opacity: 0.6; transform: translate(-50%,-50%) scale(1); }
+      50%      { opacity: 1;   transform: translate(-50%,-50%) scale(1.14); }
+    }
+    #hero .section-inner { position: relative; z-index: 1; padding-top: 4rem; padding-bottom: 5rem; }
+    .hero-eyebrow {
+      display: inline-block; font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.38em; text-transform: uppercase;
+      color: var(--accent-blue); margin-bottom: 1.3rem;
+    }
+    .hero-title {
+      font-size: clamp(2.6rem,7vw,5.5rem); font-weight: 700;
+      line-height: 1.1; letter-spacing: -0.025em; color: #fff; margin-bottom: 1.3rem;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, var(--accent-blue) 0%, #b38fff 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-subtitle {
+      font-size: clamp(1rem,2.2vw,1.2rem); font-weight: 300; color: var(--text-muted);
+      max-width: 580px; margin: 0 auto 1.2rem; line-height: 1.7;
+    }
+    .hero-body {
+      font-size: clamp(0.9rem,1.6vw,1rem); font-weight: 300;
+      color: rgba(224,224,224,0.75); max-width: 620px;
+      margin: 0 auto 2.8rem; line-height: 1.75;
+    }
+    .btn-demo-large {
+      display: inline-block; padding: 1rem 2.8rem;
+      font-family: var(--font); font-size: 0.95rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: #fff; text-decoration: none;
+      background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+      border: none; border-radius: 4px; cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 0 20px rgba(0,200,255,0.45), 0 0 48px rgba(0,200,255,0.18);
+    }
+    .btn-demo-large:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 0 32px rgba(0,200,255,0.65), 0 0 72px rgba(0,200,255,0.28);
+    }
+    .btn-demo-large:active { transform: translateY(0) scale(0.98); }
+
     /* Footer */
-    .footer {
-      position: relative; padding: 3rem 2rem; text-align: center;
-      font-size: 0.8rem; color: #c0c0c0; background: rgba(4,4,10,0.92);
-      border-top: 1px solid rgba(255,255,255,0.06); letter-spacing: 0.06em;
+    footer {
+      background: rgba(4,4,10,0.95); border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 2.5rem 2rem; text-align: center;
     }
-    
-    /* Modal */
-    .modal-overlay {
-      display: none; position: fixed; inset: 0; z-index: 200;
-      align-items: center; justify-content: center; padding: 1rem;
-      background: rgba(4,4,10,0.82); backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px); animation: overlay-in 0.25s ease;
-    }
-    .modal-overlay.open { display: flex; }
-    @keyframes overlay-in { from { opacity: 0; } to { opacity: 1; } }
-    .modal {
-      position: relative; width: 100%; max-width: 480px; background: #0d0d1f;
-      border: 1px solid var(--border-glow); border-radius: 12px; padding: 2.5rem 2rem;
-      box-shadow: 0 0 0 1px rgba(0,200,255,0.12), 0 24px 80px rgba(0,0,0,0.7);
-      animation: modal-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-    @keyframes modal-in {
-      from { opacity: 0; transform: scale(0.88) translateY(24px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
-    }
-    .modal-close {
-      position: absolute; top: 1rem; right: 1.1rem; background: none; border: none;
-      color: #c0c0c0; font-size: 1.5rem; line-height: 1; cursor: pointer;
-      transition: color 0.15s ease;
-    }
-    .modal-close:hover { color: var(--accent-blue); }
-    .modal-eyebrow {
-      font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
-      color: var(--accent-blue); margin-bottom: 0.6rem;
-    }
-    .modal h2 { font-size: 1.55rem; font-weight: 700; margin-bottom: 0.5rem; color: #ffffff; }
-    .modal-desc { font-size: 0.88rem; color: #e0e0e0; margin-bottom: 1.8rem; line-height: 1.55; }
-    .form-group { margin-bottom: 1.15rem; }
-    .form-group label {
-      display: block; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.07em;
-      text-transform: uppercase; color: #e0e0e0; margin-bottom: 0.45rem;
-    }
-    .form-group input {
-      width: 100%; padding: 0.8rem 1rem; background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; color: var(--text-primary);
-      font-family: var(--font); font-size: 0.95rem; outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-    .form-group input::placeholder { color: rgba(200, 200, 200, 0.5); }
-    .form-group input:focus { border-color: var(--accent-blue); box-shadow: 0 0 0 3px rgba(0,200,255,0.12); }
-    .btn-submit {
-      width: 100%; padding: 0.9rem; margin-top: 0.6rem; font-family: var(--font);
-      font-size: 0.95rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
-      color: #fff; background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
-      border: none; border-radius: 6px; cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-      box-shadow: 0 0 18px rgba(0,200,255,0.35);
-    }
-    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 0 28px rgba(0,200,255,0.55); }
-    .btn-submit:active { transform: translateY(0); }
-    .thank-you { display: none; text-align: center; padding: 1rem 0; animation: fade-up 0.5s ease forwards; }
-    .thank-you .ty-icon { font-size: 3rem; margin-bottom: 1rem; }
-    .thank-you h3 { font-size: 1.35rem; font-weight: 700; color: #ffffff; margin-bottom: 0.6rem; }
-    .thank-you p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
-    
+    footer p { font-size: 0.8rem; color: rgba(200,200,200,0.55); letter-spacing: 0.06em; }
+
+    /* Responsive */
     @media (max-width: 768px) {
-      .nav-menu { gap: 1rem; font-size: 0.75rem; }
-      .section { padding: 4rem 1.5rem; }
-      .feature-grid { grid-template-columns: 1fr; }
-      .header-inner { flex-direction: column; gap: 1rem; }
-      .name { display: none; }
+      :root { --header-h: 72px; }
+      .header-claim { display: none; }
+      .hamburger { display: flex; }
+      nav.desktop-nav { display: none; }
+      .section-inner { padding: 4rem 1.25rem; }
+      .audience-split { grid-template-columns: 1fr; }
     }
-    @media (max-width: 600px) {
-      .modal { padding: 2rem 1.3rem; border-radius: 8px; }
-      .logo { height: 40px; }
-      .nav-menu { gap: 0.5rem; }
+    @media (max-width: 480px) {
+      .header-top { padding: 0 1rem; }
+      .hero-title { font-size: 2.2rem; }
     }
+  </style>
 </head>
 <body>
-  <header class="header" id="mainHeader">
-    <div class="header-inner">
-      <a href="#hero" class="logo-link">
-        <img src="logo.png" alt="SpatialCorp" class="logo" />
-      </a>
-      <ul class="nav-menu">
-        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-        <li><a href="#tech" class="nav-link" data-section="tech">Technologies</a></li>
-        <li><a href="#services" class="nav-link" data-section="services">Services</a></li>
-        <li><button class="btn-demo" onclick="openModal()">Book a Demo</button></li>
-      </ul>
-    </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-content">
-      <p class="eyebrow">SpatialCorp · Audio Solutions</p>
-      <h1 class="hero-headline">Audio solutions <span>empowering people</span></h1>
-      <p class="hero-sub">Experience the future of immersive sound, born from the demands of the world's most iconic clubs</p>
-      <button class="btn-demo" onclick="openModal()">Book a Demo</button>
-    </div>
-  </section>
-
-  <!-- ABOUT SECTION -->
-  <section class="section section-about" id="about">
-    <h2>Who We Are</h2>
-    <p><strong>Spatial Corps</strong> was born from a long-standing friendship and a shared obsession: music, DJ culture, sound systems, and the art of shaping unforgettable audio experiences.</p>
-    <p>We are a technology-driven company founded by two lifelong friends who met in high school and grew up immersed in club culture, sound engineering, and live performance. What brings us together is passion—but years of hands-on experience, curiosity, and a relentless desire to push audio beyond its conventional limits.</p>
-    
-    <h3>From the experience to the solution</h3>
-    <p>For more than a decade, our founder and CEO has been responsible for the complete audio experience of one of the most renowned and historic clubs in Ibiza. Night after night, year after year, this role meant a single, uncompromising mission: deliver the best possible sound experience, every evening, for every crowd—using real-world equipment, real constraints, and real expectations.</p>
-    <p>That leadership is grounded in a much broader professional journey. Before and alongside his work in Ibiza, he spent years as a sound engineer working on concerts and large-scale live events, gaining firsthand experience in high-pressure performance environments where precision, reliability, and rhythm are non-negotiable. His background also includes engineering experience within one of the leading companies in electronic equipment manufacturing and audio engineering.</p>
-    <p>Together with the company's co-founder, he has also been directly involved in the design and construction of sound systems themselves—combining engineering rigor with artistic intent.</p>
-    
-    <h3>Experience first. Technology as the enabler.</h3>
-    <p>Spatial Corps is built on a simple belief: <strong>extraordinary audio does not start with buying more hardware—it starts with mastering what you already have.</strong></p>
-    <p>Our shared vision is to leverage real-world experience from the most demanding performance environments and turn it into solutions that empower people. Software that helps audio professionals, enthusiasts, and creatives fully understand, control, and push their audio systems to their true potential.</p>
-  </section>
-
-  <!-- TECHNOLOGIES SECTION -->
-  <section class="section section-tech" id="tech">
-    <h2>Our Technologies</h2>
-    <p><strong>Bringing the Ibiza Sound Experience Anywhere</strong></p>
-    <p>At Spatial Corps, our technologies are designed with a clear purpose: to elevate existing audio systems into immersive, spatial experiences worthy of the world's most iconic clubs—without the complexity, disruption, or prohibitive investments traditionally associated with other solutions.</p>
-    
-    <h3>Built on Five Core Principles</h3>
-    <p>Everything we build is guided by five non-negotiable pillars:</p>
-    <ul>
-      <li><strong>Intuitive</strong> – Designed to be understood and used quickly</li>
-      <li><strong>Efficient</strong> – Maximum impact from existing infrastructure</li>
-      <li><strong>Convenient</strong> – Easy to operate, setup, and maintain</li>
-      <li><strong>Reliable</strong> – Engineered for night-after-night professional use</li>
-      <li><strong>Top-quality</strong> – Sound precision worthy of premium club culture</li>
-    </ul>
-
-    <h3>Spatial Club Ecosystem</h3>
-    <p><strong>Technology That Turns Sound Into Movement</strong></p>
-    <p>Spatial Club and Spatial DJ together form a unified ecosystem designed to transform traditional club sound systems into immersive, living audio environments. By combining state-of-the-art hardware, advanced software, and proprietary spatial audio algorithms, the Spatial ecosystem allows sound to move, interact with space, and evolve in real time.</p>
-    
-    <h3>Where Space Meets Performance</h3>
-    <p>What makes the Spatial ecosystem truly distinctive is not just immersion—it is <strong>control</strong>.</p>
-    <p>Spatial Club defines and powers the sound environment. Spatial DJ activates it. Together, they turn a static sound system into a dynamic performance instrument, where sound becomes a moving, expressive element of the show.</p>
-    <p>Music no longer simply plays in the room. It <strong>moves through it</strong>, reacts to it, and reshapes the audience experience moment by moment.</p>
-
-    <h3>Spatial DJ: Movement in Perfect Synchronization</h3>
-    <p>At the core of the ecosystem lies Spatial DJ's defining capability:</p>
-    <p><strong>Real-time synchronization between spatial motion, rhythm, and BPM</strong></p>
-    <p>This is the cornerstone of the Spatial Corps trademark and philosophy. Spatial DJ enables DJs to:</p>
-    <ul>
-      <li>Precisely synchronize spatial movement with rhythm and BPM</li>
-      <li>Control how sound travels, rotates, expands, and contracts within the space</li>
-      <li>Design immersive moments that evolve live, directly driven by musical structure</li>
-      <li>Use spatial motion as a creative layer, not a pre-programmed effect</li>
-    </ul>
-    <p>By locking spatial behavior to tempo and rhythm, Spatial DJ transforms spatial audio from a background enhancement into a <strong>musical language</strong>—fully integrated into the DJ's performance and identity.</p>
-  </section>
-
-  <!-- SERVICES SECTION -->
-  <section class="section section-services" id="services">
-    <h2>Our Services</h2>
-    <p><strong>An Ecosystem Built Around Sound, Experience, and People</strong></p>
-    <p>At Spatial Corps, our services are not standalone offerings. They form an integrated ecosystem designed to support venues and artists before, during, and long after the technology is installed.</p>
-    <p><strong>We partner with our clients to unlock its full potential.</strong></p>
-
-    <h3>From Vision to Reality</h3>
-    <p>Every venue is different. Every sound system has its own strengths, limitations, and personality. Our service ecosystem starts with understanding—not assumptions.</p>
-    <p>We work closely with club owners, operators, and technical teams to:</p>
-    <ul>
-      <li>Understand the identity and ambition of the venue</li>
-      <li>Evaluate the existing audio infrastructure</li>
-      <li>Define how immersive audio can enhance the overall experience</li>
-    </ul>
-
-    <h3>Spatial Audio Integration & Optimization</h3>
-    <p>At the core of our service offering is the integration of Spatial Club into real-world club environments. Our approach is pragmatic, efficient, and experience-driven.</p>
-    <p>We provide:</p>
-    <ul>
-      <li>System analysis and audio evaluation</li>
-      <li>Spatial Club configuration and tuning</li>
-      <li>Seamless integration</li>
-      <li>On-site commissioning and validation</li>
-    </ul>
-
-    <h3>DJ Enablement & Training</h3>
-    <p>Technology alone does not create immersion—<strong>people do.</strong></p>
-    <p>That's why our service ecosystem places strong emphasis on DJ enablement. We support artists by:</p>
-    <ul>
-      <li>Introducing intuitive spatial performance workflows</li>
-      <li>Training them to use Spatial DJ confidently and creatively</li>
-      <li>Helping them integrate immersive sound naturally into their sets</li>
-    </ul>
-
-    <h3>Ongoing Support & Evolution</h3>
-    <p>Clubs are living environments. Music, artists, audiences, and expectations evolve constantly. Our services extend beyond installation through:</p>
-    <ul>
-      <li>System checks and refinements</li>
-      <li>Updates aligned with new creative possibilities</li>
-      <li>Long-term collaboration with venue teams</li>
-    </ul>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2026 SpatialCorp. All rights reserved.</p>
-    <p>Audio solutions empowering people</p>
-  </footer>
-
-  <!-- DEMO MODAL -->
-  <div class="modal-overlay" id="demoModal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal">
-      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
-      <div id="formView">
-        <p class="modal-eyebrow">SpatialCorp · Demo Request</p>
-        <h2 id="modal-title">Book a Demo</h2>
-        <p class="modal-desc">Tell us about yourself and we'll get in touch to arrange your personalised SpatialCorp demo.</p>
-        <form id="demoForm" onsubmit="handleSubmit(event)">
-          <input type="hidden" name="access_key" value="d5cca1a1-b32b-4c4f-be92-77d050190ad8">
-          <input type="hidden" name="subject" value="Demo Request - SpatialCorp">
-          <input type="hidden" name="from_name" value="SpatialCorp Website">
-
-          <div class="form-group">
-            <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" name="name" placeholder="Your full name" required autocomplete="name" />
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
-          </div>
-          <div class="form-group">
-            <label for="company">Club / Rental Company Name</label>
-            <input type="text" id="company" name="company" placeholder="Your club or company" required autocomplete="organization" />
-          </div>
-          <button type="submit" class="btn-submit" id="submitBtn">Send Request</button>
-        </form>
-      </div>
-      <div class="thank-you" id="thankYou">
-        <div class="ty-icon">🎧</div>
-        <h3>Request sent!</h3>
-        <p>Your email client has opened with a pre-filled message.<br />We'll get back to you shortly to arrange your SpatialCorp demo.</p>
-      </div>
-    </div>
+<header id="site-header">
+  <div class="header-top">
+    <a href="#hero" class="header-logo">
+      <img src="logo.png" alt="Spatial Corps" loading="lazy" />
+    </a>
+    <span class="header-claim">Audio solutions empowering people</span>
+    <a href="mailto:info@spatialcorp.com" class="btn-demo">Book a Demo</a>
+    <button class="hamburger" id="hamburger-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+  <nav class="desktop-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#who-we-are"       class="nav-link" data-target="who-we-are">Who We Are</a>
+      <a href="#our-technologies" class="nav-link" data-target="our-technologies">Our Technologies</a>
+      <a href="#ecosystem"        class="nav-link" data-target="ecosystem">Spatial Club Ecosystem</a>
+      <a href="#our-services"     class="nav-link" data-target="our-services">Our Services</a>
+    </div>
+  </nav>
+  <nav class="nav-mobile" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="#who-we-are"       class="nav-mobile-link">Who We Are</a>
+    <a href="#our-technologies" class="nav-mobile-link">Our Technologies</a>
+    <a href="#ecosystem"        class="nav-mobile-link">Spatial Club Ecosystem</a>
+    <a href="#our-services"     class="nav-mobile-link">Our Services</a>
+  </nav>
+</header>
 
-  <script>
-    // Navigation active state
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.section');
-    
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 100) {
-          current = section.getAttribute('id');
-        }
-      });
-      
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('data-section') === current) {
-          link.classList.add('active');
-        }
-      });
+<main>
+
+  <section id="hero" aria-label="Hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="section-inner">
+      <p class="hero-eyebrow">Spatial Corps &middot; Audio Solutions</p>
+      <h1 class="hero-title">Spatial<br /><span class="gradient-text">Corps</span></h1>
+      <p class="hero-subtitle">Audio solutions empowering people</p>
+      <p class="hero-body">Spatial Corps was born from a long-standing friendship and a shared obsession: music, DJ culture, sound systems, and the art of shaping unforgettable audio experiences.</p>
+      <a href="mailto:info@spatialcorp.com" class="btn-demo-large">Book a Demo</a>
+    </div>
+  </section>
+
+  <section id="who-we-are">
+    <div class="section-inner">
+      <h2>Who We Are</h2>
+      <h3>Spatial Corps &mdash; Audio solutions empowering people</h3>
+      <p>Spatial Corps was born from a long-standing friendship and a shared obsession: music, DJ culture, sound systems, and the art of shaping unforgettable audio experiences.</p>
+      <p>We are a technology-driven company founded by two lifelong friends who met in high school and grew up immersed in club culture, sound engineering, and live performance. What brings us together is not only passion&mdash;but years of hands-on experience, curiosity, and a relentless desire to push audio beyond its conventional limits.</p>
+
+      <h3>From the experience to the solution</h3>
+      <p>For more than a decade, our founder and CEO has been responsible for the complete audio experience of one of the most renowned and historic clubs in Ibiza. Night after night, year after year, this role meant a single, uncompromising mission: deliver the best possible sound experience, every evening, for every crowd&mdash;using real-world equipment, real constraints, and real expectations.</p>
+      <p>That leadership is grounded in a much broader professional journey. Before and alongside his work in Ibiza, he spent years as a sound engineer working on concerts and large-scale live events, gaining first-hand experience in high-pressure performance environments where precision, reliability, and rhythm are non-negotiable. His background also includes engineering experience within one of the leading companies in electronic equipment manufacturing and audio engineering&mdash;bringing an industrial-grade understanding of how professional systems are designed, built, and scaled.</p>
+      <p>Together with the company&rsquo;s co-founder, he has also been directly involved in the design and construction of sound systems themselves&mdash;combining engineering rigor with artistic intent. This hands-on work goes far beyond technical expertise: it reflects a deep understanding of club culture, DJ workflows, audience perception, and the unspoken rules that determine when a sound system truly comes alive.</p>
+      <p>Alongside him, the co-founder and General Manager leads the transformation from concept to company&mdash;turning years of practical knowledge into a scalable vision, a structured offering, and a sustainable business.</p>
+
+      <h3>Experience first. Technology as the enabler.</h3>
+      <p>Spatial Corps is built on a simple belief: <strong>extraordinary audio does not start with buying more hardware&mdash;it starts with mastering what you already have.</strong></p>
+      <p>Our shared vision is to leverage real-world experience from the most demanding performance environments and turn it into solutions that empower people. Software that helps audio professionals, enthusiasts, and creatives fully understand, control, and push their audio systems to their true potential. This is where Spatial Corps operates.</p>
+
+      <h3>Our ultimate goal</h3>
+      <p>At the core of everything we do is the listener. Whether on a packed dancefloor, inside a club, or within an immersive environment, our mission is to enable deep, immersive, and emotionally powerful audio experiences&mdash;experiences that move people, elevate music, and transform space into something unforgettable.</p>
+      <p>Spatial Corps exists to give creators and operators the tools to shape sound with intention, precision, and freedom&mdash;and to ensure that, in the end, the audience always feels it.</p>
+    </div>
+  </section>
+
+  <section id="our-technologies">
+    <div class="section-inner">
+      <h2>Our Technologies</h2>
+
+      <h3>Bringing the Ibiza Sound Experience Anywhere</h3>
+      <p>At Spatial Corps, our technologies are designed with a clear purpose: to elevate existing audio systems into immersive, spatial experiences worthy of the world&rsquo;s most iconic clubs&mdash;without the complexity, disruption, or prohibitive investments traditionally associated with other solutions.</p>
+      <p>Born inside real clubs and refined through years of live operation, our technology stack combines advanced software, intelligent algorithms, and carefully selected hardware to deliver intuitive, reliable, and professional-grade spatial audio&mdash;accessible to venues and artists everywhere.</p>
+
+      <h3>Built on Five Core Principles</h3>
+      <div class="principles" role="list">
+        <span class="pill" role="listitem"><strong>Intuitive</strong> &mdash; Designed to be understood and used quickly</span>
+        <span class="pill" role="listitem"><strong>Efficient</strong> &mdash; Maximum impact from existing infrastructure</span>
+        <span class="pill" role="listitem"><strong>Convenient</strong> &mdash; Easy to operate, setup, and maintain</span>
+        <span class="pill" role="listitem"><strong>Reliable</strong> &mdash; Engineered for night-after-night professional use</span>
+        <span class="pill" role="listitem"><strong>Top-quality</strong> &mdash; Sound precision worthy of premium club culture</span>
+      </div>
+      <p>These principles ensure our technologies are not only powerful&mdash;but usable in real-world conditions.</p>
+    </div>
+  </section>
+
+  <section id="ecosystem">
+    <div class="section-inner">
+      <h2>Spatial Club Ecosystem</h2>
+
+      <h3>Technology That Turns Sound Into Movement</h3>
+      <p>Spatial Club and Spatial DJ together form a unified ecosystem designed to transform traditional club sound systems into immersive, living audio environments. By combining state-of-the-art hardware, advanced software, and proprietary spatial audio algorithms, the Spatial ecosystem allows sound to move, interact with space, and evolve in real time&mdash;without forcing clubs or artists to rebuild everything from scratch.</p>
+      <p>Spatial DJ unlocks a new, powerful and creative performance system for the DJs; Spatial Club helps club owners turn their existing rooms into advanced immersive spaces.</p>
+      <p>Works with the vast majority of professional audio equipment:</p>
+      <ul>
+        <li>Integrates seamlessly into existing setups</li>
+        <li>Requires minimal structural or technical rework</li>
+        <li>Delivers professional-grade immersive sound with faster deployment and lower investment</li>
+      </ul>
+
+      <h3>Where Space Meets Performance</h3>
+      <p>What makes the Spatial ecosystem truly distinctive is not just immersion&mdash;it is <strong>control</strong>. Spatial Club defines and powers the sound environment. Spatial DJ activates it. Together, they turn a static sound system into a dynamic performance instrument, where sound becomes a moving, expressive element of the show.</p>
+      <p>Music no longer simply plays in the room. It <strong>moves through it</strong>, reacts to it, and reshapes the audience experience moment by moment.</p>
+
+      <h3>Spatial DJ: Movement in Perfect Synchronization</h3>
+      <p>At the core of the ecosystem lies Spatial DJ&rsquo;s defining capability: <strong>real-time synchronization between spatial motion, rhythm, and BPM.</strong> This is the cornerstone of the Spatial Corps trademark and philosophy. Spatial DJ enables DJs to:</p>
+      <ul>
+        <li>Precisely synchronize spatial movement with rhythm and BPM</li>
+        <li>Control how sound travels, rotates, expands, and contracts within the space</li>
+        <li>Design immersive moments that evolve live, directly driven by musical structure</li>
+        <li>Use spatial motion as a creative layer, not a pre-programmed effect</li>
+      </ul>
+      <p>By locking spatial behavior to tempo and rhythm, Spatial DJ transforms spatial audio from a background enhancement into a <strong>musical language</strong>&mdash;fully integrated into the DJ&rsquo;s performance and identity. This makes immersion feel intentional, musical, and alive, rather than random or decorative.</p>
+      <h3>Designed for Real Clubs, Real Performers</h3>
+      <div class="audience-split">
+        <div class="audience-block">
+          <h4>For club owners &amp; operators</h4>
+          <ul>
+            <li>Fast deployment with minimal disruption</li>
+            <li>Compatibility with industry-standard hardware and software</li>
+            <li>Reduced investment compared to traditional spatial systems</li>
+            <li>Professional performance without added operational complexity</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <h4>For DJs</h4>
+          <ul>
+            <li>Intuitive tools with a fast-learning curve</li>
+            <li>Optimized for live performance, not studio experimentation</li>
+            <li>A new expressive dimension that differentiates their sound and sets</li>
+            <li>The ability to translate the Ibiza-level immersive experience to any venue</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>One Ecosystem, Shared Value</h3>
+      <ul>
+        <li>Clubs gain a powerful yet manageable way to elevate their venue</li>
+        <li>DJs gain a new creative dimension tightly connected to the music</li>
+        <li>Audiences experience sound that feels immersive, emotional, and unforgettable</li>
+      </ul>
+      <p>This is not experimental technology. It is engineered from real operational experience and held to professional standards.</p>
+
+      <h3>The Spatial Corps Difference</h3>
+      <ul>
+        <li>Immersive spatial audio without dedicated or proprietary installations</li>
+        <li>Broad compatibility with existing professional equipment</li>
+        <li>Simplified operation and rapid adoption</li>
+        <li>Spatial behavior that is musically synchronized&mdash;not arbitrarily automated</li>
+      </ul>
+      <p>Our approach is pragmatic, flexible, and rooted in club reality&mdash;where experience, flow, and reliability matter more than technical spectacle.</p>
+
+      <h3>From Ibiza to Everywhere</h3>
+      <p>Spatial Corps technologies were shaped in one of the most demanding club environments in the world. Our mission is to make that level of immersive, rhythm-driven audio experience accessible anywhere&mdash;for clubs, artists, and communities who want to move beyond the ordinary.</p>
+      <p>This is not just technology. It is culture, performance, and sound&mdash;designed to move people.</p>
+    </div>
+  </section>
+
+  <section id="our-services">
+    <div class="section-inner">
+      <h2>Our Services</h2>
+
+      <h3>An Ecosystem Built Around Sound, Experience, and People</h3>
+      <p>At Spatial Corps, our services are not standalone offerings. They form an integrated ecosystem designed to support venues and artists before, during, and long after the technology is installed. We don&rsquo;t simply deliver technology. We partner with our clients to unlock its full potential.</p>
+
+      <h3>From Vision to Reality</h3>
+      <p>Every venue is different. Every sound system has its own strengths, limitations, and personality. Our service ecosystem starts with understanding&mdash;not assumptions. We work closely with club owners, operators, and technical teams to:</p>
+      <ul>
+        <li>Understand the identity and ambition of the venue</li>
+        <li>Evaluate the existing audio infrastructure</li>
+        <li>Define how immersive audio can enhance the overall experience</li>
+      </ul>
+      <p>From the very first conversation, our focus is clear: maximize results while respecting what already works.</p>
+
+      <h3>Spatial Audio Integration &amp; Optimization</h3>
+      <ul>
+        <li>System analysis and audio evaluation</li>
+        <li>Spatial Club configuration and tuning</li>
+        <li>Seamless integration</li>
+        <li>On-site commissioning and validation</li>
+      </ul>
+      <p>The goal is not to make systems more complex&mdash;it is to make them more expressive, immersive, and controllable.</p>
+
+      <h3>DJ Enablement &amp; Training</h3>
+      <ul>
+        <li>Introducing intuitive spatial performance workflows</li>
+        <li>Training them to use Spatial DJ confidently and creatively</li>
+        <li>Helping them integrate immersive sound naturally into their sets</li>
+      </ul>
+      <p>The objective is simple but powerful: enable DJs to express themselves more fully, without adding complexity or disrupting their creative flow.</p>
+
+      <h3>Ongoing Support &amp; Evolution</h3>
+      <ul>
+        <li>System checks and refinements</li>
+        <li>Updates aligned with new creative possibilities</li>
+        <li>Long-term collaboration with venue teams</li>
+      </ul>
+      <p>This ensures that immersive audio remains an asset, not a one-time experiment.</p>
+
+      <h3>One Ecosystem, Multiple Touchpoints</h3>
+      <ul>
+        <li>Spatial Club ecosystem shapes the environment and empowers performance</li>
+        <li>Our services ensure everything works together&mdash;reliably, intuitively, and at professional standards</li>
+      </ul>
+      <p>Each element strengthens the others, creating a self-reinforcing ecosystem centered on experience.</p>
+
+      <h3>The Result</h3>
+      <div class="audience-split">
+        <div class="audience-block">
+          <h4>For club owners</h4>
+          <ul>
+            <li>A clear path to elevate their venue</li>
+            <li>Measurable experiential impact</li>
+            <li>Technology that fits their reality</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <h4>For DJs</h4>
+          <ul>
+            <li>New expressive tools</li>
+            <li>A deeper connection with the audience</li>
+            <li>A truly immersive canvas for performance</li>
+          </ul>
+        </div>
+      </div>
+      <p>For audiences: sound that moves, surrounds, and stays with them.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Spatial Corps. All rights reserved.</p>
+</footer>
+
+<script>
+  // Hamburger toggle
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mobileNav    = document.getElementById('mobile-nav');
+
+  hamburgerBtn.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.querySelectorAll('.nav-mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
     });
+  });
 
-    // Modal functions
-    function openModal() {
-      document.getElementById('demoModal').classList.add('open');
-      document.body.style.overflow = 'hidden';
-      document.getElementById('formView').style.display = 'block';
-      document.getElementById('thankYou').style.display = 'none';
-      document.getElementById('demoForm').reset();
-    }
-    function closeModal() {
-      document.getElementById('demoModal').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    document.getElementById('demoModal').addEventListener('click', function (e) {
-      if (e.target === this) closeModal();
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeModal();
-    });
-    async function handleSubmit(e) {
-      e.preventDefault();
-      const submitBtn = document.getElementById('submitBtn');
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
+  // Active nav on scroll
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('main section[id]');
+  const getHeaderH = () => document.getElementById('site-header').offsetHeight + 20;
 
-      const formData = new FormData(e.target);
-      const object = Object.fromEntries(formData);
-      const json = JSON.stringify(object);
-
-      try {
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: json
-        });
-
-        const result = await response.json();
-
-        if (result.success) {
-          document.getElementById('formView').style.display = 'none';
-          document.getElementById('thankYou').style.display = 'block';
-        } else {
-          alert('Something went wrong. Please try again or email us directly.');
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Send Request';
-        }
-      } catch (error) {
-        alert('Network error. Please check your connection and try again.');
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Request';
+  const onScroll = () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - getHeaderH()) {
+        current = sec.id;
       }
-    }
-  </script>
+    });
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.dataset.target === current);
+    });
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
 </body>
 </html>
