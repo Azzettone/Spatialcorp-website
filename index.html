@@ -142,6 +142,62 @@
     #our-technologies { background: var(--bg-dark); }
     #ecosystem     { background: var(--bg-alt); }
     #our-services  { background: var(--bg-dark); }
+    #tutorials     { background: var(--bg-alt); }
+    #downloads     { background: var(--bg-dark); }
+
+    /* Video grid */
+    .video-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.75rem; margin-top: 2rem;
+    }
+    .video-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(0,200,255,0.18); border-radius: 10px;
+      overflow: hidden; transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .video-card:hover { border-color: rgba(0,200,255,0.45); transform: translateY(-3px); }
+    .video-card video {
+      display: block; width: 100%; aspect-ratio: 16 / 9;
+      background: #000; object-fit: cover;
+    }
+    .video-card .video-meta { padding: 1rem 1.2rem 1.3rem; }
+    .video-card h4 {
+      font-size: 1.05rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem;
+    }
+    .video-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0; }
+
+    /* Download list */
+    .download-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+    .download-item {
+      display: flex; align-items: center; justify-content: space-between; gap: 1.25rem;
+      padding: 1.2rem 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(155,93,229,0.2); border-radius: 10px;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .download-item:hover { border-color: rgba(155,93,229,0.5); background: rgba(255,255,255,0.05); }
+    .download-info h4 {
+      font-size: 1.02rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem;
+    }
+    .download-info p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0; }
+    .download-info .download-file {
+      font-size: 0.78rem; color: rgba(200,200,200,0.55); letter-spacing: 0.03em;
+    }
+    .btn-download {
+      display: inline-block; flex-shrink: 0; padding: 0.6rem 1.4rem;
+      font-family: var(--font); font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: #fff; text-decoration: none; white-space: nowrap;
+      background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+      border: none; border-radius: 4px; cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 0 14px rgba(0,200,255,0.3);
+    }
+    .btn-download:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 0 22px rgba(0,200,255,0.55);
+    }
+    .btn-download:active { transform: translateY(0) scale(0.98); }
 
     /* Typography */
     .section-inner h2 {
@@ -269,6 +325,9 @@
       nav.desktop-nav { display: none; }
       .section-inner { padding: 4rem 1.25rem; }
       .audience-split { grid-template-columns: 1fr; }
+      .video-grid { grid-template-columns: 1fr; }
+      .download-item { flex-direction: column; align-items: flex-start; gap: 0.9rem; }
+      .btn-download { width: 100%; text-align: center; }
     }
     @media (max-width: 480px) {
       .header-top { padding: 0 1rem; }
@@ -295,6 +354,8 @@
       <a href="#our-technologies" class="nav-link" data-target="our-technologies">Our Technologies</a>
       <a href="#ecosystem"        class="nav-link" data-target="ecosystem">Spatial Club Ecosystem</a>
       <a href="#our-services"     class="nav-link" data-target="our-services">Our Services</a>
+      <a href="#tutorials"        class="nav-link" data-target="tutorials">Tutorials</a>
+      <a href="#downloads"        class="nav-link" data-target="downloads">Downloads</a>
     </div>
   </nav>
   <nav class="nav-mobile" id="mobile-nav" aria-label="Mobile navigation">
@@ -302,6 +363,8 @@
     <a href="#our-technologies" class="nav-mobile-link">Our Technologies</a>
     <a href="#ecosystem"        class="nav-mobile-link">Spatial Club Ecosystem</a>
     <a href="#our-services"     class="nav-mobile-link">Our Services</a>
+    <a href="#tutorials"        class="nav-mobile-link">Tutorials</a>
+    <a href="#downloads"        class="nav-mobile-link">Downloads</a>
   </nav>
 </header>
 
@@ -365,8 +428,20 @@
       <h2>Spatial Club Ecosystem</h2>
 
       <h3>Technology That Turns Sound Into Movement</h3>
-      <p>Spatial Club and Spatial DJ together form a unified ecosystem designed to transform traditional club sound systems into immersive, living audio environments. By combining state-of-the-art hardware, advanced software, and proprietary spatial audio algorithms, the Spatial ecosystem allows sound to move, interact with space, and evolve in real time&mdash;without forcing clubs or artists to rebuild everything from scratch.</p>
-      <p>Spatial DJ unlocks a new, powerful and creative performance system for the DJs; Spatial Club helps club owners turn their existing rooms into advanced immersive spaces.</p>
+      <p>Spatial DJ and Spatial Club together form a unified ecosystem designed to transform traditional club sound systems into immersive, living audio environments. By combining state-of-the-art hardware, advanced software, and proprietary spatial audio algorithms, the Spatial ecosystem allows sound to move, interact with space, and evolve in real time&mdash;without forcing clubs or artists to rebuild everything from scratch.</p>
+
+      <h3>Two Products, One Ecosystem</h3>
+      <div class="audience-split">
+        <div class="audience-block">
+          <h4>Spatial DJ &mdash; The Performance Interface</h4>
+          <p>Spatial DJ is the creative performance interface for DJs. At its core, it provides <strong>OSC control of external spatialization engines</strong>, letting performers synchronize spatial movement with rhythm and BPM while driving the spatial motors they already use. It is the expressive layer that turns spatial audio into a live, musical instrument.</p>
+        </div>
+        <div class="audience-block">
+          <h4>Spatial Club &mdash; The Complete Suite</h4>
+          <p>Spatial Club is the full suite: <strong>Spatial DJ + SPACe</strong>. SPACe is our proprietary spatialized audio engine, purpose-built for club environments. Combined with the Spatial DJ interface, it delivers a complete, self-contained immersive audio system&mdash;without depending on third-party spatialization engines.</p>
+        </div>
+      </div>
+      <p>Spatial DJ unlocks a new, powerful and creative performance system for DJs; Spatial Club helps club owners turn their existing rooms into advanced immersive spaces powered by SPACe.</p>
       <p>Works with the vast majority of professional audio equipment:</p>
       <ul>
         <li>Integrates seamlessly into existing setups</li>
@@ -375,7 +450,7 @@
       </ul>
 
       <h3>Where Space Meets Performance</h3>
-      <p>What makes the Spatial ecosystem truly distinctive is not just immersion&mdash;it is <strong>control</strong>. Spatial Club defines and powers the sound environment. Spatial DJ activates it. Together, they turn a static sound system into a dynamic performance instrument, where sound becomes a moving, expressive element of the show.</p>
+      <p>What makes the Spatial ecosystem truly distinctive is not just immersion&mdash;it is <strong>control</strong>. Spatial DJ gives performers precise, rhythm-driven control over spatial movement, whether driving external engines via OSC or the proprietary SPACe engine within the Spatial Club suite. Together, interface and engine turn a static sound system into a dynamic performance instrument, where sound becomes a moving, expressive element of the show.</p>
       <p>Music no longer simply plays in the room. It <strong>moves through it</strong>, reacts to it, and reshapes the audience experience moment by moment.</p>
 
       <h3>Spatial DJ: Movement in Perfect Synchronization</h3>
@@ -500,6 +575,58 @@
         </div>
       </div>
       <p>For audiences: sound that moves, surrounds, and stays with them.</p>
+    </div>
+  </section>
+
+  <section id="tutorials">
+    <div class="section-inner">
+      <h2>Tutorials</h2>
+      <h3>Learn Spatial DJ &amp; Spatial Club</h3>
+      <p>Step-by-step video tutorials to help you get the most out of the Spatial ecosystem&mdash;from first setup to advanced live performance techniques.</p>
+
+      <div class="video-grid">
+        <!--
+          To add a tutorial, copy a .video-card block below and:
+          1. Place your video file in assets/videos/ (e.g. assets/videos/getting-started.mp4)
+          2. Update the <source src="..."> path, the <h4> title, and the <p> description.
+          Optional: add a poster image with poster="assets/videos/your-poster.jpg"
+        -->
+        <article class="video-card">
+          <video controls preload="metadata">
+            <source src="assets/videos/placeholder.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-meta">
+            <h4>Getting Started</h4>
+            <p>An introduction to the Spatial ecosystem and your first setup.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="downloads">
+    <div class="section-inner">
+      <h2>Downloads</h2>
+      <h3>DWG Files &amp; Resources</h3>
+      <p>Download technical drawings and resources in DWG format. Use them for planning, integration, and installation of your Spatial setup.</p>
+
+      <div class="download-list">
+        <!--
+          To add a download, copy a .download-item block below and:
+          1. Place your file in assets/dwg/ (e.g. assets/dwg/my-drawing.dwg)
+          2. Update the href="...", the download attribute, the <h4> title,
+             the description <p>, and the file name/size line.
+        -->
+        <div class="download-item">
+          <div class="download-info">
+            <h4>Sample Drawing</h4>
+            <p>Reference technical drawing for Spatial system layout.</p>
+            <span class="download-file">placeholder.dwg</span>
+          </div>
+          <a href="assets/dwg/placeholder.dwg" class="btn-download" download>Download</a>
+        </div>
+      </div>
     </div>
   </section>
 
