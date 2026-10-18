@@ -143,7 +143,6 @@
     #ecosystem     { background: var(--bg-alt); }
     #our-services  { background: var(--bg-dark); }
     #tutorials     { background: var(--bg-alt); }
-    #downloads     { background: var(--bg-dark); }
 
     /* Video grid */
     .video-grid {
@@ -166,38 +165,6 @@
     }
     .video-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0; }
 
-    /* Download list */
-    .download-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
-    .download-item {
-      display: flex; align-items: center; justify-content: space-between; gap: 1.25rem;
-      padding: 1.2rem 1.5rem;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(155,93,229,0.2); border-radius: 10px;
-      transition: border-color 0.2s ease, background 0.2s ease;
-    }
-    .download-item:hover { border-color: rgba(155,93,229,0.5); background: rgba(255,255,255,0.05); }
-    .download-info h4 {
-      font-size: 1.02rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem;
-    }
-    .download-info p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0; }
-    .download-info .download-file {
-      font-size: 0.78rem; color: rgba(200,200,200,0.55); letter-spacing: 0.03em;
-    }
-    .btn-download {
-      display: inline-block; flex-shrink: 0; padding: 0.6rem 1.4rem;
-      font-family: var(--font); font-size: 0.78rem; font-weight: 600;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: #fff; text-decoration: none; white-space: nowrap;
-      background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
-      border: none; border-radius: 4px; cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 0 14px rgba(0,200,255,0.3);
-    }
-    .btn-download:hover {
-      transform: translateY(-2px) scale(1.03);
-      box-shadow: 0 0 22px rgba(0,200,255,0.55);
-    }
-    .btn-download:active { transform: translateY(0) scale(0.98); }
 
     /* Typography */
     .section-inner h2 {
@@ -326,8 +293,6 @@
       .section-inner { padding: 4rem 1.25rem; }
       .audience-split { grid-template-columns: 1fr; }
       .video-grid { grid-template-columns: 1fr; }
-      .download-item { flex-direction: column; align-items: flex-start; gap: 0.9rem; }
-      .btn-download { width: 100%; text-align: center; }
     }
     @media (max-width: 480px) {
       .header-top { padding: 0 1rem; }
@@ -355,7 +320,6 @@
       <a href="#ecosystem"        class="nav-link" data-target="ecosystem">Spatial Club Ecosystem</a>
       <a href="#our-services"     class="nav-link" data-target="our-services">Our Services</a>
       <a href="#tutorials"        class="nav-link" data-target="tutorials">Tutorials</a>
-      <a href="#downloads"        class="nav-link" data-target="downloads">Downloads</a>
     </div>
   </nav>
   <nav class="nav-mobile" id="mobile-nav" aria-label="Mobile navigation">
@@ -364,7 +328,6 @@
     <a href="#ecosystem"        class="nav-mobile-link">Spatial Club Ecosystem</a>
     <a href="#our-services"     class="nav-mobile-link">Our Services</a>
     <a href="#tutorials"        class="nav-mobile-link">Tutorials</a>
-    <a href="#downloads"        class="nav-mobile-link">Downloads</a>
   </nav>
 </header>
 
@@ -592,7 +555,7 @@
           Optional: add a poster image with poster="assets/videos/your-poster.jpg"
         -->
         <article class="video-card">
-          <video controls preload="metadata">
+          <video controls controlsList="nodownload" disablePictureInPicture playsinline preload="metadata" oncontextmenu="return false;">
             <source src="assets/videos/traiettorie.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -602,7 +565,7 @@
           </div>
         </article>
         <article class="video-card">
-          <video controls preload="metadata">
+          <video controls controlsList="nodownload" disablePictureInPicture playsinline preload="metadata" oncontextmenu="return false;">
             <source src="assets/videos/channel-direzione-loop.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -612,7 +575,7 @@
           </div>
         </article>
         <article class="video-card">
-          <video controls preload="metadata">
+          <video controls controlsList="nodownload" disablePictureInPicture playsinline preload="metadata" oncontextmenu="return false;">
             <source src="assets/videos/draw-in-channel-1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -622,7 +585,7 @@
           </div>
         </article>
         <article class="video-card">
-          <video controls preload="metadata">
+          <video controls controlsList="nodownload" disablePictureInPicture playsinline preload="metadata" oncontextmenu="return false;">
             <source src="assets/videos/sample-box-channel-6.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -632,7 +595,7 @@
           </div>
         </article>
         <article class="video-card">
-          <video controls preload="metadata">
+          <video controls controlsList="nodownload" disablePictureInPicture playsinline preload="metadata" oncontextmenu="return false;">
             <source src="assets/videos/draw-loop-play.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -642,7 +605,7 @@
           </div>
         </article>
         <article class="video-card">
-          <video controls preload="metadata">
+          <video controls controlsList="nodownload" disablePictureInPicture playsinline preload="metadata" oncontextmenu="return false;">
             <source src="assets/videos/cancel-trajectory-center.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -655,25 +618,6 @@
     </div>
   </section>
 
-  <section id="downloads">
-    <div class="section-inner">
-      <h2>Downloads</h2>
-      <h3>DWG Files &amp; Resources</h3>
-      <p>Download technical drawings and resources in DWG format. Use them for planning, integration, and installation of your Spatial setup.</p>
-
-      <div class="download-list">
-        <!-- Replace href with your Google Drive share link -->
-        <div class="download-item">
-          <div class="download-info">
-            <h4>Sample Drawing</h4>
-            <p>Reference technical drawing for Spatial system layout.</p>
-            <span class="download-file">Google Drive</span>
-          </div>
-          <a href="#" class="btn-download" target="_blank" rel="noopener noreferrer">Download</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
 </main>
 
