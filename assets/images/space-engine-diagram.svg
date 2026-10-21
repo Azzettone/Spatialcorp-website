@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="t d" font-family="Space Grotesk, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 654" role="img" aria-labelledby="t d" font-family="Space Grotesk, Arial, sans-serif">
   <title id="t">SPACe signal flow</title>
   <desc id="d">CDJs and samplers feed the DJ mixer, and the mixer feeds Spatial Launcher MK1 running SPACe over USB. SPACe outputs a multichannel spatialized signal to the PA through an audio interface and amplifiers, and a stereo zero-latency Booth output to the booth monitors, in zero-latency sync with the headphones plugged into the mixer.</desc>
   <defs>
@@ -18,7 +18,7 @@
     </g>
   </defs>
 
-  <rect width="1200" height="675" rx="16" fill="#04040a"/>
+  <rect width="1200" height="654" rx="16" fill="#04040a"/>
 
   <!-- Sources -->
   <text x="260" y="62" fill="#9b9bb0" font-size="14" letter-spacing="2">YOUR SETUP</text>

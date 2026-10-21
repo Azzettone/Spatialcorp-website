@@ -209,7 +209,12 @@
     .pill strong { color: var(--accent-blue); margin-right: 0.3em; }
 
     /* Product images: replace the placeholder <div> with an <img> when assets are ready */
-    .product-figure { margin: 1.6rem 0 2rem; }
+    .product-figure { margin: 1.6rem 0 0; }
+    #our-technologies .audience-block { display: flex; flex-direction: column; }
+    #our-technologies .audience-block .product-figure { margin-top: auto; padding-top: 1.6rem; }
+    .product-figure img[src$=".png"]:not([src$="launcher-mk1.png"]), .product-figure img[src$=".svg"], .img-placeholder {
+      aspect-ratio: 3584 / 1954; object-fit: contain;
+    }
     .img-placeholder[hidden] { display: none; }
     .product-figure img[src$="spatial-launcher-mk1.png"] { display: block; max-width: 340px; margin: 0 auto; }
     .product-figure img, .img-placeholder {
@@ -301,6 +306,34 @@
     .btn-demo-large:active { transform: translateY(0) scale(0.98); }
 
     /* Footer */
+    .logo-hero { display: block; width: 220px; max-width: 60%; height: auto; margin: 0 auto 1.5rem; -webkit-mask-image: radial-gradient(circle, #000 58%, transparent 71%); mask-image: radial-gradient(circle, #000 58%, transparent 71%); }
+    .logo-footer { display: block; width: 420px; max-width: 80%; height: auto; margin: 0 auto 1.5rem; -webkit-mask-image: radial-gradient(circle, #000 58%, transparent 71%); mask-image: radial-gradient(circle, #000 58%, transparent 71%); }
+
+    /* Demo request dialog */
+    dialog#demo-dialog {
+      margin: auto; width: min(520px, calc(100vw - 2rem)); padding: 2rem;
+      color: var(--text-primary); background: #0b0b16;
+      border: 1px solid rgba(0,200,255,0.35); border-radius: 12px;
+      box-shadow: 0 0 60px rgba(0,200,255,0.18);
+    }
+    dialog#demo-dialog::backdrop { background: rgba(4,4,10,0.8); backdrop-filter: blur(4px); }
+    #demo-dialog h2 { font-size: 1.5rem; margin-bottom: 0.4rem; }
+    #demo-dialog .demo-lead { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.2rem; }
+    #demo-dialog label { display: block; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-blue); margin: 1rem 0 0.35rem; }
+    #demo-dialog input, #demo-dialog textarea {
+      width: 100%; padding: 0.7rem 0.9rem; font: inherit; font-size: 1rem; color: #fff;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.18); border-radius: 6px;
+    }
+    #demo-dialog input:focus, #demo-dialog textarea:focus { outline: none; border-color: var(--accent-blue); box-shadow: 0 0 0 2px rgba(0,200,255,0.25); }
+    #demo-dialog textarea { min-height: 170px; resize: vertical; }
+    #demo-dialog .demo-actions { display: flex; gap: 0.8rem; margin-top: 1.4rem; align-items: center; }
+    #demo-dialog .btn-demo-large { padding: 0.8rem 1.8rem; font-size: 0.85rem; }
+    #demo-dialog .btn-cancel { background: none; border: none; color: var(--text-muted); font: inherit; cursor: pointer; text-decoration: underline; }
+    #demo-status { margin-top: 1rem; font-size: 0.95rem; min-height: 1.4em; }
+    #demo-status.ok { color: #3ddc97; }
+    #demo-status.err { color: #ff6b6b; }
+    .hp-field { position: absolute; left: -9999px; }
+
     footer {
       background: rgba(4,4,10,0.95); border-top: 1px solid rgba(255,255,255,0.07);
       padding: 2.5rem 2rem; text-align: center;
@@ -331,7 +364,7 @@
       <img src="logo.png" alt="Spatial Corps" loading="lazy" />
     </a>
     <span class="header-claim">Audio solutions empowering people</span>
-    <a href="mailto:info@spatialcorp.com" class="btn-demo">Book a Demo</a>
+    <a href="mailto:info@spatialcorp.com" class="btn-demo" data-demo>Book a Demo</a>
     <button class="hamburger" id="hamburger-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
     </button>
@@ -359,11 +392,12 @@
   <section id="hero" aria-label="Hero">
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="section-inner">
+      <img src="logo.png" alt="Spatial Corp - Unique audio solutions" class="logo-hero" />
       <p class="hero-eyebrow">Spatial Corps &middot; Audio Solutions</p>
       <h1 class="hero-title">Spatial<br /><span class="gradient-text">Corps</span></h1>
       <p class="hero-subtitle">Audio solutions empowering people</p>
       <p class="hero-body">Spatial Corps was born from a deep shared passion and a collective obsession: music, DJ culture, sound systems, and the art of shaping unforgettable audio experiences. A collective of friends, experts and enthusiasts united by club culture and the pursuit of immersive sound.</p>
-      <a href="mailto:info@spatialcorp.com" class="btn-demo-large">Book a Demo</a>
+      <a href="mailto:info@spatialcorp.com" class="btn-demo-large" data-demo>Book a Demo</a>
     </div>
   </section>
 
@@ -683,10 +717,80 @@
 </main>
 
 <footer>
+  <img src="logo.png" alt="Spatial Corp" class="logo-footer" loading="lazy" />
   <p>&copy; 2025 Spatial Corps. All rights reserved.</p>
 </footer>
 
+<dialog id="demo-dialog" aria-labelledby="demo-title">
+  <form id="demo-form" method="post" action="https://formsubmit.co/info@spatialcorp.com">
+    <h2 id="demo-title">Book a Demo</h2>
+    <p class="demo-lead">Tell us who you are and we&rsquo;ll get back to you to set up your demo.</p>
+    <label for="demo-name">Name</label>
+    <input id="demo-name" name="name" type="text" autocomplete="name" required />
+    <label for="demo-email">Email</label>
+    <input id="demo-email" name="email" type="email" autocomplete="email" required />
+    <label for="demo-message">Message</label>
+    <textarea id="demo-message" name="message" required>Hi Spatial Corp team,
+
+I'd like to book a demo of Spatial Club. Please contact me to arrange a date and time.
+
+Thank you!</textarea>
+    <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    <input type="hidden" name="_subject" value="Demo request from spatialcorp.com" />
+    <input type="hidden" name="_template" value="table" />
+    <input type="hidden" name="_captcha" value="false" />
+    <div class="demo-actions">
+      <button type="submit" class="btn-demo-large" id="demo-submit">Send request</button>
+      <button type="button" class="btn-cancel" id="demo-cancel">Close</button>
+    </div>
+    <p id="demo-status" role="status" aria-live="polite"></p>
+  </form>
+</dialog>
+
 <script>
+  // Demo request dialog
+  const demoDialog = document.getElementById('demo-dialog');
+  const demoForm   = document.getElementById('demo-form');
+  const demoStatus = document.getElementById('demo-status');
+  const demoSubmit = document.getElementById('demo-submit');
+
+  document.querySelectorAll('[data-demo]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      if (!demoDialog.showModal) return; // no dialog support: fall back to mailto
+      e.preventDefault();
+      demoStatus.textContent = '';
+      demoStatus.className = '';
+      demoSubmit.hidden = false;
+      demoSubmit.disabled = false;
+      demoDialog.showModal();
+    });
+  });
+  document.getElementById('demo-cancel').addEventListener('click', () => demoDialog.close());
+  demoDialog.addEventListener('click', e => { if (e.target === demoDialog) demoDialog.close(); });
+
+  demoForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    demoSubmit.disabled = true;
+    demoStatus.className = '';
+    demoStatus.textContent = 'Sending...';
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/info@spatialcorp.com', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(demoForm)
+      });
+      const data = await res.json();
+      if (!res.ok || String(data.success) !== 'true') throw new Error(data.message || 'Request failed');
+      demoStatus.className = 'ok';
+      demoStatus.textContent = 'Thank you! We received your request and will contact you soon.';
+      demoSubmit.hidden = true;
+    } catch (err) {
+      demoStatus.className = 'err';
+      demoStatus.textContent = 'Something went wrong. Please try again or write to info@spatialcorp.com.';
+      demoSubmit.disabled = false;
+    }
+  });
+
   // Hamburger toggle
   const hamburgerBtn = document.getElementById('hamburger-btn');
   const mobileNav    = document.getElementById('mobile-nav');
