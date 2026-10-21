@@ -192,7 +192,7 @@
       padding-left: 1.75rem; position: relative; margin-bottom: 0.6rem;
     }
     .section-inner li::before {
-      content: "b8"; position: absolute; left: 0;
+      content: "\25B8"; position: absolute; left: 0;
       color: var(--accent-blue); font-size: 0.85rem; top: 0.15em;
     }
     .section-inner strong { color: #fff; font-weight: 600; }
@@ -234,6 +234,15 @@
     .audience-block h4 {
       font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
       text-transform: uppercase; color: var(--accent-purple); margin-bottom: 0.9rem;
+    }
+
+    .audience-block h4.product-title {
+      font-size: 2rem; letter-spacing: 0; text-transform: none; line-height: 1.15;
+      color: var(--text-primary); margin-bottom: 1rem;
+    }
+    .product-title span {
+      display: block; margin-top: 0.35rem; font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-purple);
     }
 
     /* Hero */
@@ -390,7 +399,7 @@
 
       <div class="audience-split">
         <div class="audience-block">
-          <h4>Spatial DJ &mdash; The Interface</h4>
+          <h4 class="product-title">Spatial DJ<span>The Interface</span></h4>
           <p>Designed for the performance: easy, intuitive, and built to make an immersive DJ set effortless to play.</p>
           <ul>
             <li><strong>Free-hand trajectories</strong> &mdash; draw the path of your sound and watch it move</li>
@@ -406,7 +415,7 @@
           </figure>
         </div>
         <div class="audience-block">
-          <h4>SPACe &mdash; The Engine</h4>
+          <h4 class="product-title">SPACe<span>The Engine</span></h4>
           <p>Our powerful spatialization engine, developed to deliver in real clubs, night after night.</p>
           <ul>
             <li><strong>Auto-detects your setup</strong> &mdash; it recognizes your speaker configuration for you</li>
@@ -519,9 +528,6 @@
       </ul>
       <p>Our approach is pragmatic, flexible, and rooted in club reality&mdash;where experience, flow, and reliability matter more than technical spectacle.</p>
 
-      <h3>From Ibiza to Everywhere</h3>
-      <p>Spatial Corps technologies were shaped in one of the most demanding club environments in the world. Our mission is to make that level of immersive, rhythm-driven audio experience accessible anywhere&mdash;for clubs, artists, and communities who want to move beyond the ordinary.</p>
-      <p>This is not just technology. It is culture, performance, and sound&mdash;designed to move people.</p>
     </div>
   </section>
 
