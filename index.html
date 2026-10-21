@@ -210,6 +210,7 @@
 
     /* Product images: replace the placeholder <div> with an <img> when assets are ready */
     .product-figure { margin: 1.6rem 0 2rem; }
+    .img-placeholder[hidden] { display: none; }
     .product-figure img, .img-placeholder {
       width: 100%; border-radius: 12px; border: 1px solid rgba(0,200,255,0.2);
     }
@@ -399,7 +400,8 @@
             <li><strong>DMX lighting control</strong> synchronized with your audio movements &mdash; coming soon</li>
           </ul>
           <figure class="product-figure">
-            <div class="img-placeholder" role="img" aria-label="Spatial DJ interface screenshot">[Image: Spatial DJ interface with a drawn trajectory and the Sample Box]</div>
+            <img src="assets/images/spatial-dj-interface.jpg" alt="Spatial DJ interface" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" />
+            <div class="img-placeholder" role="img" aria-label="Spatial DJ interface screenshot" hidden>[Image: Spatial DJ interface with a drawn trajectory and the Sample Box]</div>
           </figure>
         </div>
         <div class="audience-block">
@@ -413,7 +415,8 @@
             <li><strong>Multi-device output routing</strong> to fit any rig</li>
           </ul>
           <figure class="product-figure">
-            <div class="img-placeholder" role="img" aria-label="SPACe engine diagram">[Image: SPACe diagram &mdash; PA multichannel output + Booth stereo output]</div>
+            <img src="assets/images/space-engine-diagram.png" alt="SPACe engine" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" />
+            <div class="img-placeholder" role="img" aria-label="SPACe engine diagram" hidden>[Image: SPACe diagram &mdash; PA multichannel output + Booth stereo output]</div>
           </figure>
         </div>
       </div>
@@ -421,7 +424,8 @@
       <h3>Spatial Club &mdash; The Suite</h3>
       <p><strong>Spatial Club</strong> brings our two innovations together: Spatial DJ and SPACe in one complete immersive solution. To guarantee top performance, Spatial Club runs on <strong>Spatial Launcher MK1</strong>, our unique, purpose-built device with digital audio, analog audio, network and DMX connectivity.</p>
       <figure class="product-figure">
-        <div class="img-placeholder" role="img" aria-label="Spatial Launcher MK1 photo">[Image: Spatial Launcher MK1 &mdash; front and rear panel with connectivity]</div>
+        <img src="assets/images/spatial-launcher-mk1.jpg" alt="Spatial Launcher MK1" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" />
+            <div class="img-placeholder" role="img" aria-label="Spatial Launcher MK1 photo" hidden>[Image: Spatial Launcher MK1 &mdash; front and rear panel with connectivity]</div>
       </figure>
 
       <h3>Built on Five Core Principles</h3>
