@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="t d" font-family="Space Grotesk, Arial, sans-serif">
   <title id="t">SPACe signal flow</title>
-  <desc id="d">CDJs and samplers feed the DJ mixer, and the mixer feeds Spatial Launcher MK1 running SPACe over USB. SPACe outputs a multichannel spatialized signal to the PA through an audio interface and amplifiers, and a stereo zero-latency Booth output to the booth monitors, in sync with the PA.</desc>
+  <desc id="d">CDJs and samplers feed the DJ mixer, and the mixer feeds Spatial Launcher MK1 running SPACe over USB. SPACe outputs a multichannel spatialized signal to the PA through an audio interface and amplifiers, and a stereo zero-latency Booth output to the booth monitors, in zero-latency sync with the headphones plugged into the mixer.</desc>
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#00c8ff"/><stop offset="1" stop-color="#9b5de5"/>
@@ -9,6 +9,7 @@
     <marker id="aP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9b5de5"/></marker>
     <marker id="aA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ffb020"/></marker>
     <marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3ddc97"/></marker>
+    <marker id="aS" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b48cff"/></marker>
     <marker id="aW" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#e0e0e0"/></marker>
     <g id="spk">
       <rect x="-14" y="-20" width="28" height="40" rx="4" fill="#12121c" stroke="#e0e0e0" stroke-width="1.5"/>
@@ -22,8 +23,8 @@
   <!-- Sources -->
   <text x="260" y="62" fill="#9b9bb0" font-size="14" letter-spacing="2">YOUR SETUP</text>
   <g fill="#12121c" stroke="#e0e0e0" stroke-width="1.5">
-    <rect x="260" y="80" width="170" height="80" rx="10"/>
-    <rect x="260" y="440" width="170" height="80" rx="10"/>
+    <rect x="280" y="80" width="130" height="80" rx="10"/>
+    <rect x="280" y="440" width="130" height="80" rx="10"/>
     <rect x="260" y="240" width="170" height="120" rx="10" stroke="#ffb020"/>
   </g>
   <g fill="#fff" font-size="17" text-anchor="middle">
@@ -34,7 +35,7 @@
   <g fill="#9b9bb0" font-size="13" text-anchor="middle">
     <text x="345" y="138">digital or analog</text>
     <text x="345" y="498">digital or analog</text>
-    <text x="345" y="316">headphones here</text>
+    <text x="345" y="316">headphones out</text>
   </g>
   <path d="M345 160V238" fill="none" stroke="#ffb020" stroke-width="2.5" marker-end="url(#aA)"/>
   <path d="M345 440V362" fill="none" stroke="#ffb020" stroke-width="2.5" marker-end="url(#aA)"/>
@@ -69,12 +70,12 @@
   <path d="M980 520H1012" stroke="#9b5de5" stroke-width="3" marker-end="url(#aP)"/>
   <use href="#spk" x="1060" y="520"/><use href="#spk" x="1130" y="520"/>
   <text x="820" y="595" fill="#fff" font-size="18" font-weight="600">Stereo Booth · zero-latency render</text>
-  <text x="820" y="617" fill="#9b9bb0" font-size="14">Perfect sync with the PA and with your headphones</text>
+  <text x="820" y="617" fill="#9b9bb0" font-size="14">Locked in sync with your headphones</text>
 
-  <!-- Sync -->
-  <line x1="900" y1="230" x2="900" y2="470" stroke="#7f7fd5" stroke-width="2" stroke-dasharray="5 5"/>
-  <rect x="820" y="333" width="160" height="34" rx="17" fill="#04040a" stroke="url(#g)" stroke-width="2"/>
-  <text x="900" y="355" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">0-latency sync</text>
+  <!-- Sync: mixer headphones <-> booth -->
+  <path d="M422 362V560H900V557" fill="none" stroke="#b48cff" stroke-width="2.5" stroke-dasharray="7 6" marker-start="url(#aS)" marker-end="url(#aP)"/>
+  <rect x="520" y="541" width="160" height="38" rx="19" fill="#04040a" stroke="#b48cff" stroke-width="2"/>
+  <text x="600" y="565" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">0-latency sync</text>
 
   <!-- Legend -->
   <g font-size="13" fill="#9b9bb0">
@@ -82,5 +83,6 @@
     <line x1="175" y1="600" x2="205" y2="600" stroke="#3ddc97" stroke-width="3"/><text x="215" y="605">Mixer to SPACe</text>
     <line x1="350" y1="600" x2="380" y2="600" stroke="#00c8ff" stroke-width="3"/><text x="390" y="605">Dance floor</text>
     <line x1="490" y1="600" x2="520" y2="600" stroke="#9b5de5" stroke-width="3"/><text x="530" y="605">DJ booth</text>
+    <line x1="620" y1="600" x2="650" y2="600" stroke="#b48cff" stroke-width="3" stroke-dasharray="6 4"/><text x="660" y="605">Headphones sync</text>
   </g>
 </svg>
