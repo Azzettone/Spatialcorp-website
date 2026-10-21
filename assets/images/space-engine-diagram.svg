@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="t d" font-family="Space Grotesk, Arial, sans-serif">
+  <title id="t">SPACe signal flow</title>
+  <desc id="d">DJ mixer, CDJs and samplers feed Spatial Launcher MK1 running SPACe over USB. SPACe outputs a multichannel spatialized signal to the PA through an audio interface and amplifiers, and a stereo zero-latency Booth output to the DJ monitors.</desc>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00c8ff"/><stop offset="1" stop-color="#9b5de5"/>
+    </linearGradient>
+    <marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#00c8ff"/></marker>
+    <marker id="aP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9b5de5"/></marker>
+    <marker id="aW" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#e0e0e0"/></marker>
+    <g id="spk">
+      <rect x="-14" y="-20" width="28" height="40" rx="4" fill="#12121c" stroke="#e0e0e0" stroke-width="1.5"/>
+      <circle cy="-8" r="4" fill="none" stroke="#e0e0e0" stroke-width="1.5"/>
+      <circle cy="7" r="8" fill="none" stroke="#e0e0e0" stroke-width="1.5"/>
+    </g>
+  </defs>
+
+  <rect width="1200" height="675" rx="16" fill="#04040a"/>
+
+  <!-- Sources -->
+  <text x="40" y="62" fill="#9b9bb0" font-size="14" letter-spacing="2">YOUR SETUP</text>
+  <g fill="#12121c" stroke="#e0e0e0" stroke-width="1.5" font-size="16" fill-opacity="1" text-anchor="middle">
+    <rect x="40" y="80" width="230" height="80" rx="10"/>
+    <rect x="40" y="200" width="230" height="80" rx="10"/>
+    <rect x="40" y="320" width="230" height="110" rx="10" stroke="#00c8ff"/>
+  </g>
+  <g fill="#fff" font-size="17" text-anchor="middle">
+    <text x="155" y="116">CDJ / Sampler</text>
+    <text x="155" y="236">CDJ / Sampler</text>
+    <text x="155" y="366" font-weight="600">DJ Mixer</text>
+  </g>
+  <g fill="#9b9bb0" font-size="13" text-anchor="middle">
+    <text x="155" y="138">digital or analog</text>
+    <text x="155" y="258">digital or analog</text>
+    <text x="155" y="388">USB audio</text>
+  </g>
+  <path d="M270 120H310V300M270 240H310V300M270 375H310V300" fill="none" stroke="#e0e0e0" stroke-width="2"/>
+  <path d="M310 300H395" fill="none" stroke="#e0e0e0" stroke-width="2" marker-end="url(#aW)"/>
+
+  <!-- Launcher -->
+  <rect x="400" y="190" width="300" height="220" rx="16" fill="#0b0b16" stroke="url(#g)" stroke-width="3"/>
+  <text x="550" y="236" fill="#9b9bb0" font-size="13" text-anchor="middle" letter-spacing="2">SPATIAL LAUNCHER MK1</text>
+  <text x="550" y="288" fill="url(#g)" font-size="46" font-weight="700" text-anchor="middle">SPACe</text>
+  <text x="550" y="326" fill="#fff" font-size="15" text-anchor="middle">Auto-detects your setup</text>
+  <text x="550" y="350" fill="#fff" font-size="15" text-anchor="middle">Surround  ·  CLUB mode</text>
+  <text x="550" y="388" fill="#9b9bb0" font-size="13" text-anchor="middle">Spatial DJ interface · DMX · Network</text>
+
+  <!-- PA branch -->
+  <path d="M700 250H760V120H800" fill="none" stroke="#00c8ff" stroke-width="3" marker-end="url(#aB)"/>
+  <text x="716" y="190" fill="#00c8ff" font-size="14" font-weight="600">PA</text>
+  <rect x="800" y="85" width="170" height="70" rx="10" fill="#12121c" stroke="#00c8ff" stroke-width="1.5"/>
+  <text x="885" y="115" fill="#fff" font-size="15" text-anchor="middle">Audio interface</text>
+  <text x="885" y="135" fill="#fff" font-size="15" text-anchor="middle">&amp; amplifiers</text>
+  <path d="M970 120H1010" stroke="#00c8ff" stroke-width="3" marker-end="url(#aB)"/>
+  <g>
+    <use href="#spk" x="1040" y="75"/><use href="#spk" x="1100" y="75"/><use href="#spk" x="1160" y="75"/>
+    <use href="#spk" x="1040" y="130"/><use href="#spk" x="1100" y="130"/><use href="#spk" x="1160" y="130"/>
+  </g>
+  <text x="800" y="190" fill="#fff" font-size="18" font-weight="600">Multichannel spatialized</text>
+  <text x="800" y="212" fill="#9b9bb0" font-size="14">Your whole PA becomes part of the show</text>
+
+  <!-- Booth branch -->
+  <path d="M700 350H760V520H800" fill="none" stroke="#9b5de5" stroke-width="3" marker-end="url(#aP)"/>
+  <text x="772" y="450" fill="#9b5de5" font-size="14" font-weight="600">BOOTH</text>
+  <rect x="800" y="485" width="170" height="70" rx="10" fill="#12121c" stroke="#9b5de5" stroke-width="1.5"/>
+  <text x="885" y="515" fill="#fff" font-size="15" text-anchor="middle">Booth monitors</text>
+  <text x="885" y="535" fill="#fff" font-size="15" text-anchor="middle">&amp; headphones</text>
+  <path d="M970 520H1010" stroke="#9b5de5" stroke-width="3" marker-end="url(#aP)"/>
+  <use href="#spk" x="1060" y="520"/><use href="#spk" x="1130" y="520"/>
+  <text x="800" y="595" fill="#fff" font-size="18" font-weight="600">Stereo Booth · zero-latency render</text>
+  <text x="800" y="617" fill="#9b9bb0" font-size="14">Perfect sync between what you hear and what you cue</text>
+
+  <!-- Legend -->
+  <g font-size="13" fill="#9b9bb0">
+    <line x1="40" y1="600" x2="70" y2="600" stroke="#e0e0e0" stroke-width="2"/><text x="80" y="605">Input</text>
+    <line x1="140" y1="600" x2="170" y2="600" stroke="#00c8ff" stroke-width="3"/><text x="180" y="605">Dance floor</text>
+    <line x1="280" y1="600" x2="310" y2="600" stroke="#9b5de5" stroke-width="3"/><text x="320" y="605">DJ booth</text>
+  </g>
+</svg>
