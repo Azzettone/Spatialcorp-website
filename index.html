@@ -309,12 +309,18 @@
     .patent-badge {
       display: inline-block; vertical-align: middle; margin-left: 0.6rem;
       padding: 0.2rem 0.65rem; font-style: normal; font-size: 0.66rem; font-weight: 600;
-      letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap;
+      letter-spacing: 0.14em; text-transform: uppercase;
       color: #fff; background: rgba(155,93,229,0.2); border: 1px solid rgba(155,93,229,0.6);
       border-radius: 100px;
     }
-    #our-technologies .audience-block { position: relative; }
-    .product-title .patent-badge { position: absolute; top: 1.9rem; right: 1.5rem; margin: 0; }
+    .audience-block h4.product-title {
+      display: grid; grid-template-columns: 1fr auto; column-gap: 0.8rem; align-items: start;
+    }
+    .product-title span { grid-column: 1 / -1; grid-row: 2; }
+    .product-title .patent-badge {
+      grid-column: 2; grid-row: 1; margin: 0.35rem 0 0; max-width: 11rem;
+      white-space: normal; text-align: center; line-height: 1.35;
+    }
     .section-inner h3 .patent-badge { font-size: 0.62rem; }
     footer p + p { margin-top: 0.4rem; }
     .logo-hero { display: block; width: 220px; max-width: 60%; height: auto; margin: 0 auto 1.5rem; -webkit-mask-image: radial-gradient(circle, #000 58%, transparent 71%); mask-image: radial-gradient(circle, #000 58%, transparent 71%); }
@@ -416,7 +422,6 @@
     <div class="section-inner">
       <h2>Who We Are</h2>
       <h3>Spatial Corps &mdash; Audio solutions empowering people</h3>
-      <p>Spatial Corps was born from a deep shared passion and a collective obsession: music, DJ culture, sound systems, and the art of shaping unforgettable audio experiences.</p>
       <p>We are a technology-driven company built by a collective of friends, experts and enthusiasts who grew up immersed in club culture, sound engineering, and live performance. United by shared values and decades of collective experience, each of us brings deep expertise in a different dimension of club audio and performance design.</p>
 
       <h3>From the experience to the solution</h3>
