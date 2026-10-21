@@ -21,68 +21,68 @@
   <rect width="1200" height="654" rx="16" fill="#04040a"/>
 
   <!-- Sources -->
-  <text x="260" y="62" fill="#9b9bb0" font-size="14" letter-spacing="2">YOUR SETUP</text>
+  <text x="40" y="38" fill="#9b9bb0" font-size="14" letter-spacing="2">YOUR SETUP</text>
   <g fill="#12121c" stroke="#e0e0e0" stroke-width="1.5">
-    <rect x="280" y="80" width="130" height="80" rx="10"/>
-    <rect x="275" y="440" width="140" height="80" rx="10"/>
-    <rect x="260" y="240" width="170" height="120" rx="10" stroke="#ffb020"/>
+    <rect x="50" y="52" width="150" height="80" rx="10"/>
+    <rect x="50" y="388" width="150" height="80" rx="10"/>
+    <rect x="20" y="200" width="210" height="120" rx="10" stroke="#ffb020"/>
   </g>
   <g fill="#fff" font-size="17" text-anchor="middle">
-    <text x="345" y="116">CDJ / Sampler</text>
-    <text x="345" y="476" font-size="16">CDJ / Turntable</text>
-    <text x="345" y="294" font-weight="600">DJ Mixer</text>
+    <text x="125" y="88">CDJ / Sampler</text>
+    <text x="125" y="424" font-size="16">CDJ / Turntable</text>
+    <text x="125" y="254" font-weight="600">DJ Mixer</text>
   </g>
   <g fill="#9b9bb0" font-size="13" text-anchor="middle">
-    <text x="345" y="138">digital or analog</text>
-    <text x="345" y="498">digital or analog</text>
-    <text x="345" y="316">headphones out</text>
+    <text x="125" y="110">digital or analog</text>
+    <text x="125" y="446">digital or analog</text>
+    <text x="125" y="276">headphones out</text>
   </g>
-  <path d="M345 160V238" fill="none" stroke="#ffb020" stroke-width="2.5" marker-end="url(#aA)"/>
-  <path d="M345 440V362" fill="none" stroke="#ffb020" stroke-width="2.5" marker-end="url(#aA)"/>
-  <path d="M430 300H478" fill="none" stroke="#3ddc97" stroke-width="3" marker-end="url(#aG)"/>
-  <text x="454" y="288" fill="#3ddc97" font-size="13" font-weight="600" text-anchor="middle">USB</text>
+  <path d="M125 132V198" fill="none" stroke="#ffb020" stroke-width="2.5" marker-end="url(#aA)"/>
+  <path d="M125 388V322" fill="none" stroke="#ffb020" stroke-width="2.5" marker-end="url(#aA)"/>
+  <path d="M230 260H468" fill="none" stroke="#3ddc97" stroke-width="3" marker-end="url(#aG)"/>
+  <text x="349" y="248" fill="#3ddc97" font-size="13" font-weight="600" text-anchor="middle">USB</text>
 
-  <!-- Launcher -->
-  <rect x="480" y="190" width="260" height="220" rx="16" fill="#0b0b16" stroke="url(#g)" stroke-width="3"/>
-  <text x="610" y="236" fill="#9b9bb0" font-size="13" text-anchor="middle" letter-spacing="2">SPATIAL LAUNCHER MK1</text>
-  <text x="610" y="288" fill="url(#g)" font-size="46" font-weight="700" text-anchor="middle">SPACe</text>
-  <text x="610" y="326" fill="#fff" font-size="15" text-anchor="middle">Auto-detects your setup</text>
-  <text x="610" y="350" fill="#fff" font-size="15" text-anchor="middle">Surround  ·  CLUB mode</text>
-  <text x="610" y="388" fill="#9b9bb0" font-size="13" text-anchor="middle">Spatial DJ · DMX · Network</text>
+  <!-- Launcher (centered on x=600) -->
+  <rect x="470" y="150" width="260" height="220" rx="16" fill="#0b0b16" stroke="url(#g)" stroke-width="3"/>
+  <text x="600" y="196" fill="#9b9bb0" font-size="13" text-anchor="middle" letter-spacing="2">SPATIAL LAUNCHER MK1</text>
+  <text x="600" y="248" fill="url(#g)" font-size="46" font-weight="700" text-anchor="middle">SPACe</text>
+  <text x="600" y="286" fill="#fff" font-size="15" text-anchor="middle">Auto-detects your setup</text>
+  <text x="600" y="310" fill="#fff" font-size="15" text-anchor="middle">Surround  ·  CLUB mode</text>
+  <text x="600" y="348" fill="#9b9bb0" font-size="13" text-anchor="middle">Spatial DJ · DMX · Network</text>
 
   <!-- PA branch -->
-  <path d="M740 250H780V120H818" fill="none" stroke="#00c8ff" stroke-width="3" marker-end="url(#aB)"/>
-  <text x="756" y="190" fill="#00c8ff" font-size="14" font-weight="600">PA</text>
-  <rect x="820" y="85" width="160" height="70" rx="10" fill="#12121c" stroke="#00c8ff" stroke-width="1.5"/>
-  <text x="900" y="115" fill="#fff" font-size="15" text-anchor="middle">Audio interface</text>
-  <text x="900" y="135" fill="#fff" font-size="15" text-anchor="middle">&amp; amplifiers</text>
-  <path d="M980 120H1012" stroke="#00c8ff" stroke-width="3" marker-end="url(#aB)"/>
-  <use href="#spk" x="1050" y="75"/><use href="#spk" x="1105" y="75"/><use href="#spk" x="1160" y="75"/>
-  <use href="#spk" x="1050" y="130"/><use href="#spk" x="1105" y="130"/><use href="#spk" x="1160" y="130"/>
-  <text x="820" y="190" fill="#fff" font-size="18" font-weight="600">Multichannel spatialized</text>
-  <text x="820" y="212" fill="#9b9bb0" font-size="14">Your whole PA becomes part of the show</text>
+  <path d="M730 200H775V100H818" fill="none" stroke="#00c8ff" stroke-width="3" marker-end="url(#aB)"/>
+  <text x="747" y="170" fill="#00c8ff" font-size="14" font-weight="600">PA</text>
+  <rect x="820" y="65" width="160" height="70" rx="10" fill="#12121c" stroke="#00c8ff" stroke-width="1.5"/>
+  <text x="900" y="95" fill="#fff" font-size="15" text-anchor="middle">Audio interface</text>
+  <text x="900" y="115" fill="#fff" font-size="15" text-anchor="middle">&amp; amplifiers</text>
+  <path d="M980 100H1012" stroke="#00c8ff" stroke-width="3" marker-end="url(#aB)"/>
+  <use href="#spk" x="1050" y="55"/><use href="#spk" x="1105" y="55"/><use href="#spk" x="1160" y="55"/>
+  <use href="#spk" x="1050" y="110"/><use href="#spk" x="1105" y="110"/><use href="#spk" x="1160" y="110"/>
+  <text x="820" y="170" fill="#fff" font-size="18" font-weight="600">Multichannel spatialized</text>
+  <text x="820" y="192" fill="#9b9bb0" font-size="14">Your whole PA becomes part of the show</text>
 
   <!-- Booth branch -->
-  <path d="M740 350H780V520H818" fill="none" stroke="#9b5de5" stroke-width="3" marker-end="url(#aP)"/>
-  <text x="792" y="450" fill="#9b5de5" font-size="14" font-weight="600">BOOTH</text>
-  <rect x="820" y="485" width="160" height="70" rx="10" fill="#12121c" stroke="#9b5de5" stroke-width="1.5"/>
-  <text x="900" y="526" fill="#fff" font-size="15" text-anchor="middle">Booth monitors</text>
-  <path d="M980 520H1012" stroke="#9b5de5" stroke-width="3" marker-end="url(#aP)"/>
-  <use href="#spk" x="1060" y="520"/><use href="#spk" x="1130" y="520"/>
-  <text x="820" y="595" fill="#fff" font-size="18" font-weight="600">Stereo Booth · zero-latency render</text>
-  <text x="820" y="617" fill="#9b9bb0" font-size="14">Locked in sync with your headphones</text>
+  <path d="M730 320H775V440H818" fill="none" stroke="#9b5de5" stroke-width="3" marker-end="url(#aP)"/>
+  <text x="787" y="390" fill="#9b5de5" font-size="14" font-weight="600">BOOTH</text>
+  <rect x="820" y="405" width="160" height="70" rx="10" fill="#12121c" stroke="#9b5de5" stroke-width="1.5"/>
+  <text x="900" y="446" fill="#fff" font-size="15" text-anchor="middle">Booth monitors</text>
+  <path d="M980 440H1012" stroke="#9b5de5" stroke-width="3" marker-end="url(#aP)"/>
+  <use href="#spk" x="1060" y="440"/><use href="#spk" x="1130" y="440"/>
+  <text x="820" y="532" fill="#fff" font-size="18" font-weight="600">Stereo Booth · zero-latency render</text>
+  <text x="820" y="554" fill="#9b9bb0" font-size="14">Locked in sync with your headphones</text>
 
   <!-- Sync: mixer headphones <-> booth -->
-  <path d="M422 362V560H900V557" fill="none" stroke="#b48cff" stroke-width="2.5" stroke-dasharray="7 6" marker-start="url(#aS)" marker-end="url(#aP)"/>
-  <rect x="520" y="541" width="160" height="38" rx="19" fill="#04040a" stroke="#b48cff" stroke-width="2"/>
-  <text x="600" y="565" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">0-latency sync</text>
+  <path d="M215 322V496H900V477" fill="none" stroke="#b48cff" stroke-width="2.5" stroke-dasharray="7 6" marker-start="url(#aS)" marker-end="url(#aP)"/>
+  <rect x="477" y="477" width="160" height="38" rx="19" fill="#04040a" stroke="#b48cff" stroke-width="2"/>
+  <text x="557" y="501" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">0-latency sync</text>
 
   <!-- Legend -->
   <g font-size="13" fill="#9b9bb0">
-    <line x1="30" y1="600" x2="60" y2="600" stroke="#ffb020" stroke-width="3"/><text x="70" y="605">CDJ to mixer</text>
-    <line x1="175" y1="600" x2="205" y2="600" stroke="#3ddc97" stroke-width="3"/><text x="215" y="605">Mixer to SPACe</text>
-    <line x1="350" y1="600" x2="380" y2="600" stroke="#00c8ff" stroke-width="3"/><text x="390" y="605">Dance floor</text>
-    <line x1="490" y1="600" x2="520" y2="600" stroke="#9b5de5" stroke-width="3"/><text x="530" y="605">DJ booth</text>
-    <line x1="620" y1="600" x2="650" y2="600" stroke="#b48cff" stroke-width="3" stroke-dasharray="6 4"/><text x="660" y="605">Headphones sync</text>
+    <line x1="30" y1="612" x2="60" y2="612" stroke="#ffb020" stroke-width="3"/><text x="70" y="617">CDJ to mixer</text>
+    <line x1="175" y1="612" x2="205" y2="612" stroke="#3ddc97" stroke-width="3"/><text x="215" y="617">Mixer to SPACe</text>
+    <line x1="350" y1="612" x2="380" y2="612" stroke="#00c8ff" stroke-width="3"/><text x="390" y="617">Dance floor</text>
+    <line x1="490" y1="612" x2="520" y2="612" stroke="#9b5de5" stroke-width="3"/><text x="530" y="617">DJ booth</text>
+    <line x1="620" y1="612" x2="650" y2="612" stroke="#b48cff" stroke-width="3" stroke-dasharray="6 4"/><text x="660" y="617">Headphones sync</text>
   </g>
 </svg>
