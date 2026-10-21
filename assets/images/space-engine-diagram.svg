@@ -7,6 +7,8 @@
     </linearGradient>
     <marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#00c8ff"/></marker>
     <marker id="aP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9b5de5"/></marker>
+    <marker id="aA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ffb020"/></marker>
+    <marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3ddc97"/></marker>
     <marker id="aW" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#e0e0e0"/></marker>
     <g id="spk">
       <rect x="-14" y="-20" width="28" height="40" rx="4" fill="#12121c" stroke="#e0e0e0" stroke-width="1.5"/>
@@ -18,25 +20,26 @@
   <rect width="1200" height="675" rx="16" fill="#04040a"/>
 
   <!-- Sources -->
-  <text x="30" y="62" fill="#9b9bb0" font-size="14" letter-spacing="2">YOUR SETUP</text>
+  <text x="260" y="62" fill="#9b9bb0" font-size="14" letter-spacing="2">YOUR SETUP</text>
   <g fill="#12121c" stroke="#e0e0e0" stroke-width="1.5">
-    <rect x="30" y="170" width="180" height="80" rx="10"/>
-    <rect x="30" y="350" width="180" height="80" rx="10"/>
-    <rect x="260" y="240" width="170" height="120" rx="10" stroke="#00c8ff"/>
+    <rect x="260" y="80" width="170" height="80" rx="10"/>
+    <rect x="260" y="440" width="170" height="80" rx="10"/>
+    <rect x="260" y="240" width="170" height="120" rx="10" stroke="#ffb020"/>
   </g>
   <g fill="#fff" font-size="17" text-anchor="middle">
-    <text x="120" y="206">CDJ / Sampler</text>
-    <text x="120" y="386">CDJ / Sampler</text>
+    <text x="345" y="116">CDJ / Sampler</text>
+    <text x="345" y="476">CDJ / Sampler</text>
     <text x="345" y="294" font-weight="600">DJ Mixer</text>
   </g>
   <g fill="#9b9bb0" font-size="13" text-anchor="middle">
-    <text x="120" y="228">digital or analog</text>
-    <text x="120" y="408">digital or analog</text>
+    <text x="345" y="138">digital or analog</text>
+    <text x="345" y="498">digital or analog</text>
     <text x="345" y="316">headphones here</text>
   </g>
-  <path d="M210 210H235V280H258M210 390H235V320H258" fill="none" stroke="#e0e0e0" stroke-width="2" marker-end="url(#aW)"/>
-  <path d="M430 300H478" fill="none" stroke="#e0e0e0" stroke-width="2" marker-end="url(#aW)"/>
-  <text x="454" y="288" fill="#9b9bb0" font-size="13" text-anchor="middle">USB</text>
+  <path d="M345 160V238" fill="none" stroke="#ffb020" stroke-width="2.5" marker-end="url(#aA)"/>
+  <path d="M345 440V362" fill="none" stroke="#ffb020" stroke-width="2.5" marker-end="url(#aA)"/>
+  <path d="M430 300H478" fill="none" stroke="#3ddc97" stroke-width="3" marker-end="url(#aG)"/>
+  <text x="454" y="288" fill="#3ddc97" font-size="13" font-weight="600" text-anchor="middle">USB</text>
 
   <!-- Launcher -->
   <rect x="480" y="190" width="260" height="220" rx="16" fill="#0b0b16" stroke="url(#g)" stroke-width="3"/>
@@ -75,8 +78,9 @@
 
   <!-- Legend -->
   <g font-size="13" fill="#9b9bb0">
-    <line x1="40" y1="600" x2="70" y2="600" stroke="#e0e0e0" stroke-width="2"/><text x="80" y="605">Input</text>
-    <line x1="140" y1="600" x2="170" y2="600" stroke="#00c8ff" stroke-width="3"/><text x="180" y="605">Dance floor</text>
-    <line x1="280" y1="600" x2="310" y2="600" stroke="#9b5de5" stroke-width="3"/><text x="320" y="605">DJ booth</text>
+    <line x1="30" y1="600" x2="60" y2="600" stroke="#ffb020" stroke-width="3"/><text x="70" y="605">CDJ to mixer</text>
+    <line x1="175" y1="600" x2="205" y2="600" stroke="#3ddc97" stroke-width="3"/><text x="215" y="605">Mixer to SPACe</text>
+    <line x1="350" y1="600" x2="380" y2="600" stroke="#00c8ff" stroke-width="3"/><text x="390" y="605">Dance floor</text>
+    <line x1="490" y1="600" x2="520" y2="600" stroke="#9b5de5" stroke-width="3"/><text x="530" y="605">DJ booth</text>
   </g>
 </svg>
