@@ -208,6 +208,18 @@
     .pill:hover { background: rgba(0,200,255,0.12); border-color: rgba(0,200,255,0.45); }
     .pill strong { color: var(--accent-blue); margin-right: 0.3em; }
 
+    /* Product images: replace the placeholder <div> with an <img> when assets are ready */
+    .product-figure { margin: 1.6rem 0 2rem; }
+    .product-figure img, .img-placeholder {
+      width: 100%; border-radius: 12px; border: 1px solid rgba(0,200,255,0.2);
+    }
+    .img-placeholder {
+      aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 1rem; color: var(--text-muted); font-size: 0.9rem;
+      background: rgba(255,255,255,0.03); border-style: dashed;
+    }
+    .product-figure figcaption { margin-top: 0.6rem; font-size: 0.85rem; color: var(--text-muted); text-align: center; }
+
     /* Audience split */
     .audience-split {
       display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0;
@@ -339,7 +351,7 @@
       <p class="hero-eyebrow">Spatial Corps &middot; Audio Solutions</p>
       <h1 class="hero-title">Spatial<br /><span class="gradient-text">Corps</span></h1>
       <p class="hero-subtitle">Audio solutions empowering people</p>
-      <p class="hero-body">Spatial Corps was born from a deep shared passion and a collective obsession: music, DJ culture, sound systems, and the art of shaping unforgettable audio experiences. Three lifelong friends united by club culture and the pursuit of immersive sound.</p>
+      <p class="hero-body">Spatial Corps was born from a deep shared passion and a collective obsession: music, DJ culture, sound systems, and the art of shaping unforgettable audio experiences. A collective of friends, experts and enthusiasts united by club culture and the pursuit of immersive sound.</p>
       <a href="mailto:info@spatialcorp.com" class="btn-demo-large">Book a Demo</a>
     </div>
   </section>
@@ -349,12 +361,12 @@
       <h2>Who We Are</h2>
       <h3>Spatial Corps &mdash; Audio solutions empowering people</h3>
       <p>Spatial Corps was born from a deep shared passion and a collective obsession: music, DJ culture, sound systems, and the art of shaping unforgettable audio experiences.</p>
-      <p>We are a technology-driven company founded by three collaborators who grew up immersed in club culture, sound engineering, and live performance. United by shared values and decades of collective experience, we each bring deep expertise in different dimensions of club audio and performance design.</p>
+      <p>We are a technology-driven company built by a collective of friends, experts and enthusiasts who grew up immersed in club culture, sound engineering, and live performance. United by shared values and decades of collective experience, each of us brings deep expertise in a different dimension of club audio and performance design.</p>
 
       <h3>From the experience to the solution</h3>
       <p>For more than a decade, our leadership team has been responsible for the complete audio experience of one of the most renowned and historic clubs in Ibiza. Night after night, year after year, we&rsquo;ve shaped sound systems and managed immersive environments at the highest level.</p>
       <p>This experience spans multiple dimensions: from on-the-ground club management and DJ performance perspective, to sound engineering rigor on large-scale live events, to the design and construction of sound systems themselves&mdash;combining technical precision with artistic vision.</p>
-      <p>Our co-founder brings crucial expertise in translating this practical knowledge into scalable product vision and structured company operations. Together, we have directly shaped every element of the Spatial Club and Spatial DJ prototypes, with each team member contributing specific expertise in different areas of DJ performance and system design.</p>
+      <p>Within the collective, some of us turn this hands-on knowledge into scalable product vision and structured company operations. Together, we have shaped every element of Spatial Club, Spatial DJ and SPACe, with each member contributing specific expertise in DJ performance and system design.</p>
 
       <h3>Experience first. Technology as the enabler.</h3>
       <p>Spatial Corps is built on a simple belief: <strong>extraordinary audio does not start with buying more hardware&mdash;it starts with mastering what you already have.</strong></p>
@@ -372,8 +384,45 @@
 
       <h3>Powerful Technology, Simple to Use</h3>
       <p>At Spatial Corps, we have created effective technologies that are simple and fast to use. Our goal is to bring the immersive sound revolution to everyone, every day.</p>
-      <p><strong>Spatial DJ</strong> is the intuitive, standardized interface for controlling spatial sound. <strong>SPACe</strong> is our spatial audio engine, designed for clubs and live events&mdash;without the need for complex and expensive renovations.</p>
-      <p><strong>Spatial Club</strong> and <strong>Spatial Launch MK1</strong>, our physical device, represent the pinnacle of our technology, uniting Spatial DJ and SPACe in a single solution.</p>
+      <p>Three names, one vision: <strong>Spatial DJ</strong> is the interface, <strong>SPACe</strong> is the engine, and <strong>Spatial Club</strong> is the suite that unites them&mdash;running on our dedicated device, <strong>Spatial Launcher MK1</strong>.</p>
+
+      <div class="audience-split">
+        <div class="audience-block">
+          <h4>Spatial DJ &mdash; The Interface</h4>
+          <p>Designed for the performance: easy, intuitive, and built to make an immersive DJ set effortless to play.</p>
+          <ul>
+            <li><strong>Free-hand trajectories</strong> &mdash; draw the path of your sound and watch it move</li>
+            <li><strong>BPM sync</strong> &mdash; every movement locks to the groove of your set</li>
+            <li><strong>Preset trajectories</strong> &mdash; instant, ready-to-play motion</li>
+            <li><strong>Sample Box</strong> &mdash; load 4 samples and swap them at will, live</li>
+            <li><strong>Open by design</strong> &mdash; already compatible with numerous immersive audio systems, and any new software you want to add is easy to integrate</li>
+            <li><strong>DMX lighting control</strong> synchronized with your audio movements &mdash; coming soon</li>
+          </ul>
+          <figure class="product-figure">
+            <div class="img-placeholder" role="img" aria-label="Spatial DJ interface screenshot">[Image: Spatial DJ interface with a drawn trajectory and the Sample Box]</div>
+          </figure>
+        </div>
+        <div class="audience-block">
+          <h4>SPACe &mdash; The Engine</h4>
+          <p>Our powerful spatialization engine, developed to deliver in real clubs, night after night.</p>
+          <ul>
+            <li><strong>Auto-detects your setup</strong> &mdash; it recognizes your speaker configuration for you</li>
+            <li><strong>Surround or CLUB mode</strong> &mdash; classic surround, or our CLUB mode with unique algorithms tailored to the psychoacoustic sensations of the dancefloor</li>
+            <li><strong>Two outputs, one perfect set</strong> &mdash; multichannel for the PA, plus a dedicated stereo Booth output for the DJ</li>
+            <li><strong>Zero-latency spatial render</strong> on the Booth, for perfect sync with your headphones</li>
+            <li><strong>Multi-device output routing</strong> to fit any rig</li>
+          </ul>
+          <figure class="product-figure">
+            <div class="img-placeholder" role="img" aria-label="SPACe engine diagram">[Image: SPACe diagram &mdash; PA multichannel output + Booth stereo output]</div>
+          </figure>
+        </div>
+      </div>
+
+      <h3>Spatial Club &mdash; The Suite</h3>
+      <p><strong>Spatial Club</strong> brings our two innovations together: Spatial DJ and SPACe in one complete immersive solution. To guarantee top performance, Spatial Club runs on <strong>Spatial Launcher MK1</strong>, our unique, purpose-built device with digital audio, analog audio, network and DMX connectivity.</p>
+      <figure class="product-figure">
+        <div class="img-placeholder" role="img" aria-label="Spatial Launcher MK1 photo">[Image: Spatial Launcher MK1 &mdash; front and rear panel with connectivity]</div>
+      </figure>
 
       <h3>Built on Five Core Principles</h3>
       <div class="principles" role="list">
@@ -394,15 +443,15 @@
       <h3>Technology That Turns Sound Into Movement</h3>
       <p>Spatial DJ and Spatial Club together form a unified ecosystem designed to transform traditional club sound systems into immersive, living audio environments. By combining state-of-the-art hardware, advanced software, and proprietary spatial audio algorithms, the Spatial ecosystem allows sound to move, interact with space, and evolve in real time&mdash;without forcing clubs or artists to rebuild everything from scratch.</p>
 
-      <h3>Two Products, One Ecosystem</h3>
+      <h3>One Suite, Two Ways to Play</h3>
       <div class="audience-split">
         <div class="audience-block">
-          <h4>Spatial DJ &mdash; The Performance Interface</h4>
-          <p>Spatial DJ is the creative performance interface for DJs. At its core, it provides <strong>OSC control of external spatialization engines</strong>, letting performers synchronize spatial movement with rhythm and BPM while driving the spatial motors they already use. It is the expressive layer that turns spatial audio into a live, musical instrument.</p>
+          <h4>Spatial DJ &mdash; Open to Your Setup</h4>
+          <p>Spatial DJ is the creative performance interface for DJs, and it plays well with others: it controls external spatialization engines via <strong>OSC</strong>, already compatible with numerous immersive audio systems. Need something new? Any software you want can be added easily. Your rig, your engine, your rules.</p>
         </div>
         <div class="audience-block">
           <h4>Spatial Club &mdash; The Complete Suite</h4>
-          <p>Spatial Club is the full suite: <strong>Spatial DJ + SPACe</strong>. SPACe is our proprietary spatialized audio engine, purpose-built for club environments. Combined with the Spatial DJ interface, it delivers a complete, self-contained immersive audio system&mdash;without depending on third-party spatialization engines.</p>
+          <p>Spatial Club is the full experience: <strong>Spatial DJ + SPACe</strong>, running on <strong>Spatial Launcher MK1</strong>. A complete, self-contained immersive audio system&mdash;without depending on third-party spatialization engines.</p>
         </div>
       </div>
       <p>Spatial DJ unlocks a new, powerful and creative performance system for DJs; Spatial Club helps club owners turn their existing rooms into advanced immersive spaces powered by SPACe.</p>
